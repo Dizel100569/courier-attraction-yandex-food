@@ -17,6 +17,9 @@ export default function ApplicationForm() {
     e.preventDefault();
     if (formData.name && formData.phone && formData.city) {
       setSubmitted(true);
+      if (typeof window !== 'undefined' && (window as any).ym) {
+        (window as any).ym(105912288, 'reachGoal', 'submit_application');
+      }
       setTimeout(() => {
         window.open('https://reg.eda.yandex.ru/?advertisement_campaign=forms_for_agents&user_invite_code=97ea05f4a54f41f59d3b2aafca5efea2&utm_content=blank', '_blank');
       }, 500);

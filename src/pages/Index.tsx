@@ -55,7 +55,11 @@ export default function Index() {
                   className="px-8 py-6 text-foreground"
                   asChild
                 >
-                  <a href="#application-form">
+                  <a href="#application-form" onClick={() => {
+                    if (typeof window !== 'undefined' && (window as any).ym) {
+                      (window as any).ym(105912288, 'reachGoal', 'click_apply_button');
+                    }
+                  }}>
                     Подать заявку
                     <Icon name="ArrowRight" className="ml-2" size={18} />
                   </a>
@@ -208,7 +212,11 @@ export default function Index() {
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-background">Присоединяйся к команде</h2>
             <p className="text-xl text-background/90 mb-8 max-w-2xl mx-auto">Тысячи курьеров уже работают с нами и зарабатывают на своих условиях</p>
             <Button size="lg" className="px-12 py-6 text-lg text-foreground" asChild>
-              <a href="#application-form">
+              <a href="#application-form" onClick={() => {
+                if (typeof window !== 'undefined' && (window as any).ym) {
+                  (window as any).ym(105912288, 'reachGoal', 'click_apply_button');
+                }
+              }}>
                 Стать курьером
                 <Icon name="ArrowRight" className="ml-2" size={20} />
               </a>

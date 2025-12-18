@@ -41,7 +41,12 @@ export default function IncomeCalculator() {
               <p className="text-base font-medium text-center mb-4">Выберите тип курьера:</p>
               <div className="grid grid-cols-3 gap-4">
                 <div 
-                  onClick={() => setCourierType('walking')}
+                  onClick={() => {
+                    setCourierType('walking');
+                    if (typeof window !== 'undefined' && (window as any).ym) {
+                      (window as any).ym(105912288, 'reachGoal', 'use_calculator');
+                    }
+                  }}
                   className={`cursor-pointer rounded-xl overflow-hidden transition-all ${courierType === 'walking' ? 'ring-4 ring-primary shadow-xl' : 'opacity-70 hover:opacity-100'}`}
                 >
                   <img 
@@ -55,7 +60,12 @@ export default function IncomeCalculator() {
                   </div>
                 </div>
                 <div 
-                  onClick={() => setCourierType('bike')}
+                  onClick={() => {
+                    setCourierType('bike');
+                    if (typeof window !== 'undefined' && (window as any).ym) {
+                      (window as any).ym(105912288, 'reachGoal', 'use_calculator');
+                    }
+                  }}
                   className={`cursor-pointer rounded-xl overflow-hidden transition-all ${courierType === 'bike' ? 'ring-4 ring-primary shadow-xl' : 'opacity-70 hover:opacity-100'}`}
                 >
                   <img 
@@ -69,7 +79,12 @@ export default function IncomeCalculator() {
                   </div>
                 </div>
                 <div 
-                  onClick={() => setCourierType('car')}
+                  onClick={() => {
+                    setCourierType('car');
+                    if (typeof window !== 'undefined' && (window as any).ym) {
+                      (window as any).ym(105912288, 'reachGoal', 'use_calculator');
+                    }
+                  }}
                   className={`cursor-pointer rounded-xl overflow-hidden transition-all ${courierType === 'car' ? 'ring-4 ring-primary shadow-xl' : 'opacity-70 hover:opacity-100'}`}
                 >
                   <img 

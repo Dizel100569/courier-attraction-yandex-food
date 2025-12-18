@@ -21,7 +21,11 @@ export default function Header() {
           <a href="#reviews" className="text-sm font-medium hover:text-primary transition-colors">Отзывы</a>
         </nav>
         <Button size="lg" className="hidden md:flex items-center gap-2" asChild>
-          <a href="tel:88006000111">
+          <a href="tel:88006000111" onClick={() => {
+            if (typeof window !== 'undefined' && (window as any).ym) {
+              (window as any).ym(105912288, 'reachGoal', 'click_phone');
+            }
+          }}>
             <Icon name="Phone" size={18} />
             8 800 600-01-11
           </a>
