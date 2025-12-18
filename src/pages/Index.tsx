@@ -4,10 +4,18 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Badge } from '@/components/ui/badge';
 import { Slider } from '@/components/ui/slider';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 import Icon from '@/components/ui/icon';
 
 export default function Index() {
   const [hoursPerDay, setHoursPerDay] = useState([6]);
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    city: ''
+  });
+  const [submitted, setSubmitted] = useState(false);
 
   const calculateIncome = () => {
     const avgOrdersPerHour = 2.5;
@@ -19,7 +27,19 @@ export default function Index() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    window.open('https://reg.eda.yandex.ru/?advertisement_campaign=forms_for_agents&user_invite_code=97ea05f4a54f41f59d3b2aafca5efea2&utm_content=blank', '_blank');
+    if (formData.name && formData.phone && formData.city) {
+      setSubmitted(true);
+      setTimeout(() => {
+        window.open('https://reg.eda.yandex.ru/?advertisement_campaign=forms_for_agents&user_invite_code=97ea05f4a54f41f59d3b2aafca5efea2&utm_content=blank', '_blank');
+      }, 500);
+    }
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
   };
 
 
@@ -251,19 +271,66 @@ export default function Index() {
               <CardDescription className="text-lg">Нажми кнопку и начни зарабатывать уже завтра</CardDescription>
             </CardHeader>
             <CardContent className="pt-8">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <Button
-                  type="submit"
-                  size="lg"
-                  className="w-full text-xl py-7 bg-primary hover:bg-primary/90 text-primary-foreground"
-                >
-                  Отправить заявку
-                  <Icon name="Send" className="ml-2" size={20} />
-                </Button>
-                <p className="text-sm text-center text-muted-foreground">
-                  Нажимая кнопку, ты соглашаешься с условиями обработки данных
-                </p>
-              </form>
+              {submitted ? (
+                <div className="text-center space-y-4 py-8">
+                  <div className="text-6xl mb-4">✅</div>
+                  <h3 className="text-2xl font-bold text-primary">Заявка отправлена!</h3>
+                  <p className="text-muted-foreground">Мы свяжемся с тобой в ближайшее время</p>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="name" className="text-base font-semibold">Твоё имя *</Label>
+                    <Input
+                      id="name"
+                      name="name"
+                      type="text"
+                      placeholder="Например: Алексей"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      required
+                      className="h-12 text-base"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="phone" className="text-base font-semibold">Номер телефона *</Label>
+                    <Input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      placeholder="+7 (___) ___-__-__"
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      required
+                      className="h-12 text-base"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="city" className="text-base font-semibold">Твой город *</Label>
+                    <Input
+                      id="city"
+                      name="city"
+                      type="text"
+                      placeholder="Например: Москва"
+                      value={formData.city}
+                      onChange={handleInputChange}
+                      required
+                      className="h-12 text-base"
+                    />
+                  </div>
+                  <Button
+                    type="submit"
+                    size="lg"
+                    className="w-full text-xl py-7 bg-primary hover:bg-primary/90 text-primary-foreground font-bold"
+                  >
+                    Отправить заявку
+                    <Icon name="Send" className="ml-2" size={20} />
+                  </Button>
+                  <p className="text-sm text-center text-muted-foreground">
+                    Нажимая кнопку, ты соглашаешься с условиями обработки данных
+                  </p>
+                </form>
+              )}
             </CardContent>
           </Card>
         </section>
