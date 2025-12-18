@@ -24,7 +24,7 @@ export default function Index() {
           <div className="relative z-10 grid lg:grid-cols-2 gap-16 items-center py-16 px-8">
             <div className="space-y-8">
               <div className="inline-block">
-                <Badge variant="outline" className="text-sm px-4 py-2 border-primary text-primary font-semibold bg-background/80">
+                <Badge variant="outline" className="text-sm px-4 py-2 border-foreground text-foreground font-semibold bg-background/95">
                   Официальное трудоустройство
                 </Badge>
               </div>
@@ -118,22 +118,6 @@ export default function Index() {
         </section>
         
         <section className="mb-24">
-          <div className="mb-12 rounded-2xl overflow-hidden shadow-xl bg-muted/50 p-8">
-            <div className="text-center mb-6">
-              <h3 className="text-2xl font-bold text-foreground mb-2">Видеопрезентация работы курьером</h3>
-              <p className="text-muted-foreground">Узнайте больше о том, как проходит рабочий день</p>
-            </div>
-            <div className="relative rounded-xl overflow-hidden shadow-2xl" style={{ paddingBottom: '56.25%' }}>
-              <iframe
-                className="absolute top-0 left-0 w-full h-full"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                title="Работа курьером в Яндекс Еда"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </div>
-          </div>
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Как начать работать</h2>
             <p className="text-lg text-muted-foreground">Простой процесс трудоустройства за 3 шага</p>
@@ -170,12 +154,12 @@ export default function Index() {
               { name: 'Алексей', age: '24 года', income: '215 000₽', review: 'Работаю 5 месяцев. Отличный заработок при свободном графике. Успеваю учиться и зарабатывать!', rating: 5, photo: 'https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/550e6c73-8013-44fb-8ac2-71e32b05ac18.jpg' },
               { name: 'Мария', age: '28 лет', income: '192 000₽', review: 'Совмещаю с основной работой по вечерам. За 3-4 часа делаю дополнительные 50к в месяц. Супер!', rating: 5, photo: 'https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/718dbe92-f7f7-429b-8fa7-ad8a7e8586ca.jpg' },
               { name: 'Дмитрий', age: '31 год', income: '268 000₽', review: 'Перешёл с офиса на курьера — лучшее решение. Больше зарабатываю и свободного времени стало больше.', rating: 5, photo: 'https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/1b802a22-7b32-40e1-b363-b0cc86da8d8e.jpg' },
-              { name: 'Елена', age: '26 лет', income: '225 000₽', review: 'Начинала с самоката, через месяц перешла на авто. Заработок вырос в 2 раза! Команда поддержки всегда помогает.', rating: 5 },
-              { name: 'Игорь', age: '29 лет', income: '240 000₽', review: 'Работаю только по выходным, получаю больше чем на основной работе за 5 дней. Очень доволен!', rating: 5 },
-              { name: 'Анна', age: '22 года', income: '178 000₽', review: 'Студентка, работаю между парами. Удобное приложение, быстрые выплаты. Рекомендую всем друзьям!', rating: 5 },
-              { name: 'Сергей', age: '35 лет', income: '275 000₽', review: 'После увольнения попробовал курьерить — и остался! Зарабатываю больше, никакого начальства, полная свобода.', rating: 5 },
-              { name: 'Ольга', age: '30 лет', income: '205 000₽', review: 'Совмещаю с воспитанием ребёнка. Работаю когда удобно, делаю хорошие деньги. Идеальный вариант для мам!', rating: 5 },
-              { name: 'Артём', age: '27 лет', income: '235 000₽', review: 'Велосипед, свежий воздух и отличный заработок. За год купил новый байк и накопил на отпуск. Лучше офиса в 100 раз!', rating: 5 }
+              { name: 'Елена', age: '26 лет', income: '225 000₽', review: 'Начинала с самоката, через месяц перешла на авто. Заработок вырос в 2 раза! Команда поддержки всегда помогает.', rating: 5, photo: 'https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/8adefab7-97ea-4b62-a22b-8a6c2c953584.jpg' },
+              { name: 'Игорь', age: '29 лет', income: '240 000₽', review: 'Работаю только по выходным, получаю больше чем на основной работе за 5 дней. Очень доволен!', rating: 5, photo: 'https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/dd3a43d9-268f-4d8f-9709-95e32099eef0.jpg' },
+              { name: 'Анна', age: '22 года', income: '178 000₽', review: 'Студентка, работаю между парами. Удобное приложение, быстрые выплаты. Рекомендую всем друзьям!', rating: 5, photo: 'https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/2ca4df53-2aa2-4dcc-8aa7-0e3f2c2175de.jpg' },
+              { name: 'Сергей', age: '35 лет', income: '275 000₽', review: 'После увольнения попробовал курьерить — и остался! Зарабатываю больше, никакого начальства, полная свобода.', rating: 5, photo: 'https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/1cd63c51-c542-49da-ac81-691d82ae8d85.jpg' },
+              { name: 'Ольга', age: '30 лет', income: '205 000₽', review: 'Совмещаю с воспитанием ребёнка. Работаю когда удобно, делаю хорошие деньги. Идеальный вариант для мам!', rating: 5, photo: 'https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/0d2d41ba-72cc-4c4c-907a-5b409fc74842.jpg' },
+              { name: 'Артём', age: '27 лет', income: '235 000₽', review: 'Велосипед, свежий воздух и отличный заработок. За год купил новый байк и накопил на отпуск. Лучше офиса в 100 раз!', rating: 5, photo: 'https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/5d2f0204-3bf0-4e98-85be-17647b5427ed.jpg' }
             ].map((review, idx) => (
               <Card key={idx} className="hover:shadow-lg transition-shadow">
                 <CardHeader>
