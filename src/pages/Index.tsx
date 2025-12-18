@@ -52,7 +52,7 @@ export default function Index() {
               <div className="flex flex-wrap gap-4">
                 <Button 
                   size="lg" 
-                  className="px-8 py-6"
+                  className="px-8 py-6 text-foreground"
                   asChild
                 >
                   <a href="#application-form">
@@ -80,7 +80,7 @@ export default function Index() {
           </div>
         </section>
 
-        <section id="benefits" className="mb-24 bg-muted/30 py-16 -mx-4 px-4">
+        <section id="benefits" className="mb-24 bg-[#FFD700] py-16 -mx-4 px-4">
           <div className="container mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
               <div>
@@ -145,7 +145,7 @@ export default function Index() {
 
         <IncomeCalculator />
 
-        <section id="reviews" className="mb-24 bg-primary/10 py-16 -mx-4 px-4">
+        <section id="reviews" className="mb-24 bg-[#FFD700] py-16 -mx-4 px-4">
           <div className="container mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Отзывы курьеров</h2>
@@ -207,7 +207,7 @@ export default function Index() {
           <div className="relative z-10 py-32 px-8 text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-background">Присоединяйся к команде</h2>
             <p className="text-xl text-background/90 mb-8 max-w-2xl mx-auto">Тысячи курьеров уже работают с нами и зарабатывают на своих условиях</p>
-            <Button size="lg" className="px-12 py-6 text-lg" asChild>
+            <Button size="lg" className="px-12 py-6 text-lg text-foreground" asChild>
               <a href="#application-form">
                 Стать курьером
                 <Icon name="ArrowRight" className="ml-2" size={20} />
