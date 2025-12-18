@@ -80,11 +80,12 @@ export default function Index() {
         </header>
 
         <section className="mb-24 relative overflow-hidden rounded-3xl" style={{
-          backgroundImage: 'url(https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/1b65d71d-94ed-4d87-a16b-fbaae24c83b9.jpg)',
+          backgroundImage: 'url(https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/f3df6ee4-1773-4cef-a63b-33d9dd96fa7c.jpg)',
           backgroundSize: 'cover',
-          backgroundPosition: 'center'
+          backgroundPosition: 'center',
+          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)'
         }}>
-          <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/90 to-background/70"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-foreground/85 via-foreground/75 to-transparent"></div>
           <div className="relative z-10 grid lg:grid-cols-2 gap-16 items-center py-16 px-8">
             <div className="space-y-8">
               <div className="inline-block">
@@ -92,24 +93,24 @@ export default function Index() {
                   Официальное трудоустройство
                 </Badge>
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold leading-tight text-foreground">
+              <h2 className="text-4xl md:text-5xl font-bold leading-tight text-background">
                 Работа курьером в Яндекс Еда
               </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-lg text-background/90 leading-relaxed">
                 Официальное трудоустройство с полным социальным пакетом. Стабильный доход от 120 000₽ до 180 000₽ в месяц, свободный график работы и выплаты два раза в неделю.
               </p>
               <div className="grid grid-cols-3 gap-4 py-4">
-                <div className="text-center p-4 bg-background/90 backdrop-blur-sm rounded-lg border">
+                <div className="text-center p-4 bg-background/95 backdrop-blur-md rounded-lg shadow-lg">
                   <div className="text-3xl font-bold text-primary">180К₽</div>
-                  <div className="text-sm text-muted-foreground mt-1">Максимальный доход</div>
+                  <div className="text-sm text-foreground mt-1">Максимальный доход</div>
                 </div>
-                <div className="text-center p-4 bg-background/90 backdrop-blur-sm rounded-lg border">
+                <div className="text-center p-4 bg-background/95 backdrop-blur-md rounded-lg shadow-lg">
                   <div className="text-3xl font-bold text-primary">2х</div>
-                  <div className="text-sm text-muted-foreground mt-1">Выплаты в неделю</div>
+                  <div className="text-sm text-foreground mt-1">Выплаты в неделю</div>
                 </div>
-                <div className="text-center p-4 bg-background/90 backdrop-blur-sm rounded-lg border">
+                <div className="text-center p-4 bg-background/95 backdrop-blur-md rounded-lg shadow-lg">
                   <div className="text-3xl font-bold text-primary">24/7</div>
-                  <div className="text-sm text-muted-foreground mt-1">Поддержка</div>
+                  <div className="text-sm text-foreground mt-1">Поддержка</div>
                 </div>
               </div>
               <div className="flex flex-wrap gap-4">
@@ -146,9 +147,18 @@ export default function Index() {
 
         <section id="benefits" className="mb-24 bg-muted/30 py-16 -mx-4 px-4">
           <div className="container mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Преимущества работы курьером</h2>
-              <p className="text-lg text-muted-foreground">Комфортные условия и стабильный доход</p>
+            <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Преимущества работы курьером</h2>
+                <p className="text-lg text-muted-foreground">Комфортные условия и стабильный доход</p>
+              </div>
+              <div className="rounded-2xl overflow-hidden shadow-lg">
+                <img 
+                  src="https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/1db65878-d029-43a4-8b26-6c414c994d1c.jpg" 
+                  alt="Мобильное приложение для курьеров" 
+                  className="w-full h-[300px] object-cover"
+                />
+              </div>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
@@ -174,6 +184,13 @@ export default function Index() {
         </section>
         
         <section className="mb-24">
+          <div className="mb-12 rounded-2xl overflow-hidden shadow-xl">
+            <img 
+              src="https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/1009609b-dc66-4442-a579-1607f8e5d7b3.jpg" 
+              alt="Команда курьеров Яндекс Еда" 
+              className="w-full h-[400px] object-cover"
+            />
+          </div>
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Как начать работать</h2>
             <p className="text-lg text-muted-foreground">Простой процесс трудоустройства за 3 шага</p>
@@ -286,9 +303,9 @@ export default function Index() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { name: 'Алексей', age: '24 года', income: '165 000₽', review: 'Работаю 5 месяцев. Отличный заработок при свободном графике. Успеваю учиться и зарабатывать!', rating: 5 },
-              { name: 'Мария', age: '28 лет', income: '142 000₽', review: 'Совмещаю с основной работой по вечерам. За 3-4 часа делаю дополнительные 50к в месяц. Супер!', rating: 5 },
-              { name: 'Дмитрий', age: '31 год', income: '178 000₽', review: 'Перешёл с офиса на курьера — лучшее решение. Больше зарабатываю и свободного времени стало больше.', rating: 5 },
+              { name: 'Алексей', age: '24 года', income: '165 000₽', review: 'Работаю 5 месяцев. Отличный заработок при свободном графике. Успеваю учиться и зарабатывать!', rating: 5, photo: 'https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/550e6c73-8013-44fb-8ac2-71e32b05ac18.jpg' },
+              { name: 'Мария', age: '28 лет', income: '142 000₽', review: 'Совмещаю с основной работой по вечерам. За 3-4 часа делаю дополнительные 50к в месяц. Супер!', rating: 5, photo: 'https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/718dbe92-f7f7-429b-8fa7-ad8a7e8586ca.jpg' },
+              { name: 'Дмитрий', age: '31 год', income: '178 000₽', review: 'Перешёл с офиса на курьера — лучшее решение. Больше зарабатываю и свободного времени стало больше.', rating: 5, photo: 'https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/1b802a22-7b32-40e1-b363-b0cc86da8d8e.jpg' },
               { name: 'Елена', age: '26 лет', income: '155 000₽', review: 'Начинала с самоката, через месяц перешла на авто. Заработок вырос в 2 раза! Команда поддержки всегда помогает.', rating: 5 },
               { name: 'Игорь', age: '29 лет', income: '170 000₽', review: 'Работаю только по выходным, получаю больше чем на основной работе за 5 дней. Очень доволен!', rating: 5 },
               { name: 'Анна', age: '22 года', income: '138 000₽', review: 'Студентка, работаю между парами. Удобное приложение, быстрые выплаты. Рекомендую всем друзьям!', rating: 5 },
@@ -300,9 +317,13 @@ export default function Index() {
                 <CardHeader>
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex gap-3">
-                      <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-xl font-semibold text-primary">
-                        {review.name[0]}
-                      </div>
+                      {review.photo ? (
+                        <img src={review.photo} alt={review.name} className="w-12 h-12 rounded-full object-cover" />
+                      ) : (
+                        <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-xl font-semibold text-primary">
+                          {review.name[0]}
+                        </div>
+                      )}
                       <div>
                         <CardTitle className="text-lg">{review.name}</CardTitle>
                         <p className="text-sm text-muted-foreground">{review.age}</p>
