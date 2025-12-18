@@ -20,8 +20,25 @@ export default function ApplicationForm() {
       if (typeof window !== 'undefined' && (window as any).ym) {
         (window as any).ym(105912288, 'reachGoal', 'submit_application');
       }
+      
+      // Получаем UTM-метки из URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const utmSource = urlParams.get('utm_source') || '';
+      const utmMedium = urlParams.get('utm_medium') || '';
+      const utmCampaign = urlParams.get('utm_campaign') || '';
+      const utmContent = urlParams.get('utm_content') || 'blank';
+      const utmTerm = urlParams.get('utm_term') || '';
+      
+      // Формируем ссылку с UTM-метками
+      let redirectUrl = 'https://reg.eda.yandex.ru/?advertisement_campaign=forms_for_agents&user_invite_code=97ea05f4a54f41f59d3b2aafca5efea2';
+      redirectUrl += `&utm_content=${utmContent}`;
+      if (utmSource) redirectUrl += `&utm_source=${utmSource}`;
+      if (utmMedium) redirectUrl += `&utm_medium=${utmMedium}`;
+      if (utmCampaign) redirectUrl += `&utm_campaign=${utmCampaign}`;
+      if (utmTerm) redirectUrl += `&utm_term=${utmTerm}`;
+      
       setTimeout(() => {
-        window.open('https://reg.eda.yandex.ru/?advertisement_campaign=forms_for_agents&user_invite_code=97ea05f4a54f41f59d3b2aafca5efea2&utm_content=blank', '_blank');
+        window.open(redirectUrl, '_blank');
       }, 500);
     }
   };
