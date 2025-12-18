@@ -39,7 +39,7 @@ export default function ApplicationForm() {
       
       setTimeout(() => {
         window.open(redirectUrl, '_blank');
-      }, 500);
+      }, 1000);
     }
   };
 
