@@ -20,9 +20,9 @@ export default function Index() {
 
   const calculateIncome = () => {
     const courierRates = {
-      walking: { ordersPerHour: 2, payPerOrder: 350 },
-      bike: { ordersPerHour: 2.5, payPerOrder: 450 },
-      car: { ordersPerHour: 3.5, payPerOrder: 550 }
+      walking: { ordersPerHour: 2, payPerOrder: 400 },
+      bike: { ordersPerHour: 3, payPerOrder: 550 },
+      car: { ordersPerHour: 4, payPerOrder: 700 }
     };
     
     const rate = courierRates[courierType];
@@ -97,11 +97,11 @@ export default function Index() {
                 Работа курьером в Яндекс Еда
               </h2>
               <p className="text-lg text-background/90 leading-relaxed">
-                Официальное трудоустройство с полным социальным пакетом. Стабильный доход от 120 000₽ до 180 000₽ в месяц, свободный график работы и выплаты два раза в неделю.
+                Официальное трудоустройство с полным социальным пакетом. Стабильный доход от 120 000₽ до 275 000₽ в месяц, свободный график работы и выплаты два раза в неделю.
               </p>
               <div className="grid grid-cols-3 gap-4 py-4">
                 <div className="text-center p-4 bg-background/95 backdrop-blur-md rounded-lg shadow-lg">
-                  <div className="text-3xl font-bold text-primary">180К₽</div>
+                  <div className="text-3xl font-bold text-primary">275К₽</div>
                   <div className="text-sm text-foreground mt-1">Максимальный доход</div>
                 </div>
                 <div className="text-center p-4 bg-background/95 backdrop-blur-md rounded-lg shadow-lg">
@@ -163,7 +163,7 @@ export default function Index() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 { icon: 'Clock', title: 'Свободный график', desc: 'Выбирайте удобное время работы. Совмещайте с учёбой или основной работой' },
-                { icon: 'Wallet', title: 'Стабильный доход', desc: 'От 120 000₽ до 180 000₽ в месяц. Выплаты два раза в неделю без задержек' },
+                { icon: 'Wallet', title: 'Стабильный доход', desc: 'От 120 000₽ до 275 000₽ в месяц. Выплаты два раза в неделю без задержек' },
                 { icon: 'Headphones', title: 'Техподдержка 24/7', desc: 'Круглосуточная поддержка курьеров. Быстрое решение любых вопросов' },
                 { icon: 'Shield', title: 'Официальное оформление', desc: 'Полный социальный пакет, страхование, соблюдение трудового законодательства' },
                 { icon: 'Smartphone', title: 'Удобное приложение', desc: 'Простой интерфейс для управления заказами, статистикой и выплатами' },
@@ -184,12 +184,21 @@ export default function Index() {
         </section>
         
         <section className="mb-24">
-          <div className="mb-12 rounded-2xl overflow-hidden shadow-xl">
-            <img 
-              src="https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/1009609b-dc66-4442-a579-1607f8e5d7b3.jpg" 
-              alt="Команда курьеров Яндекс Еда" 
-              className="w-full h-[400px] object-cover"
-            />
+          <div className="mb-12 rounded-2xl overflow-hidden shadow-xl bg-muted/50 p-8">
+            <div className="text-center mb-6">
+              <h3 className="text-2xl font-bold text-foreground mb-2">Видеопрезентация работы курьером</h3>
+              <p className="text-muted-foreground">Узнайте больше о том, как проходит рабочий день</p>
+            </div>
+            <div className="relative rounded-xl overflow-hidden shadow-2xl" style={{ paddingBottom: '56.25%' }}>
+              <iframe
+                className="absolute top-0 left-0 w-full h-full"
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                title="Работа курьером в Яндекс Еда"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
           </div>
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Как начать работать</h2>
@@ -280,11 +289,11 @@ export default function Index() {
                 <div className="grid md:grid-cols-3 gap-4 text-center">
                   <div className="bg-card rounded-2xl p-4">
                     <p className="text-sm text-muted-foreground mb-1">Заказов в час</p>
-                    <p className="text-3xl font-bold">~{courierType === 'walking' ? '2' : courierType === 'bike' ? '2.5' : '3.5'}</p>
+                    <p className="text-3xl font-bold">~{courierType === 'walking' ? '2' : courierType === 'bike' ? '3' : '4'}</p>
                   </div>
                   <div className="bg-card rounded-2xl p-4">
                     <p className="text-sm text-muted-foreground mb-1">За заказ</p>
-                    <p className="text-3xl font-bold">~{courierType === 'walking' ? '350' : courierType === 'bike' ? '450' : '550'}₽</p>
+                    <p className="text-3xl font-bold">~{courierType === 'walking' ? '400' : courierType === 'bike' ? '550' : '700'}₽</p>
                   </div>
                   <div className="bg-card rounded-2xl p-4">
                     <p className="text-sm text-muted-foreground mb-1">Рабочих дней</p>
@@ -303,15 +312,15 @@ export default function Index() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { name: 'Алексей', age: '24 года', income: '165 000₽', review: 'Работаю 5 месяцев. Отличный заработок при свободном графике. Успеваю учиться и зарабатывать!', rating: 5, photo: 'https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/550e6c73-8013-44fb-8ac2-71e32b05ac18.jpg' },
-              { name: 'Мария', age: '28 лет', income: '142 000₽', review: 'Совмещаю с основной работой по вечерам. За 3-4 часа делаю дополнительные 50к в месяц. Супер!', rating: 5, photo: 'https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/718dbe92-f7f7-429b-8fa7-ad8a7e8586ca.jpg' },
-              { name: 'Дмитрий', age: '31 год', income: '178 000₽', review: 'Перешёл с офиса на курьера — лучшее решение. Больше зарабатываю и свободного времени стало больше.', rating: 5, photo: 'https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/1b802a22-7b32-40e1-b363-b0cc86da8d8e.jpg' },
-              { name: 'Елена', age: '26 лет', income: '155 000₽', review: 'Начинала с самоката, через месяц перешла на авто. Заработок вырос в 2 раза! Команда поддержки всегда помогает.', rating: 5 },
-              { name: 'Игорь', age: '29 лет', income: '170 000₽', review: 'Работаю только по выходным, получаю больше чем на основной работе за 5 дней. Очень доволен!', rating: 5 },
-              { name: 'Анна', age: '22 года', income: '138 000₽', review: 'Студентка, работаю между парами. Удобное приложение, быстрые выплаты. Рекомендую всем друзьям!', rating: 5 },
-              { name: 'Сергей', age: '35 лет', income: '182 000₽', review: 'После увольнения попробовал курьерить — и остался! Зарабатываю больше, никакого начальства, полная свобода.', rating: 5 },
-              { name: 'Ольга', age: '30 лет', income: '160 000₽', review: 'Совмещаю с воспитанием ребёнка. Работаю когда удобно, делаю хорошие деньги. Идеальный вариант для мам!', rating: 5 },
-              { name: 'Артём', age: '27 лет', income: '175 000₽', review: 'Велосипед, свежий воздух и отличный заработок. За год купил новый байк и накопил на отпуск. Лучше офиса в 100 раз!', rating: 5 }
+              { name: 'Алексей', age: '24 года', income: '215 000₽', review: 'Работаю 5 месяцев. Отличный заработок при свободном графике. Успеваю учиться и зарабатывать!', rating: 5, photo: 'https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/550e6c73-8013-44fb-8ac2-71e32b05ac18.jpg' },
+              { name: 'Мария', age: '28 лет', income: '192 000₽', review: 'Совмещаю с основной работой по вечерам. За 3-4 часа делаю дополнительные 50к в месяц. Супер!', rating: 5, photo: 'https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/718dbe92-f7f7-429b-8fa7-ad8a7e8586ca.jpg' },
+              { name: 'Дмитрий', age: '31 год', income: '268 000₽', review: 'Перешёл с офиса на курьера — лучшее решение. Больше зарабатываю и свободного времени стало больше.', rating: 5, photo: 'https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/1b802a22-7b32-40e1-b363-b0cc86da8d8e.jpg' },
+              { name: 'Елена', age: '26 лет', income: '225 000₽', review: 'Начинала с самоката, через месяц перешла на авто. Заработок вырос в 2 раза! Команда поддержки всегда помогает.', rating: 5 },
+              { name: 'Игорь', age: '29 лет', income: '240 000₽', review: 'Работаю только по выходным, получаю больше чем на основной работе за 5 дней. Очень доволен!', rating: 5 },
+              { name: 'Анна', age: '22 года', income: '178 000₽', review: 'Студентка, работаю между парами. Удобное приложение, быстрые выплаты. Рекомендую всем друзьям!', rating: 5 },
+              { name: 'Сергей', age: '35 лет', income: '275 000₽', review: 'После увольнения попробовал курьерить — и остался! Зарабатываю больше, никакого начальства, полная свобода.', rating: 5 },
+              { name: 'Ольга', age: '30 лет', income: '205 000₽', review: 'Совмещаю с воспитанием ребёнка. Работаю когда удобно, делаю хорошие деньги. Идеальный вариант для мам!', rating: 5 },
+              { name: 'Артём', age: '27 лет', income: '235 000₽', review: 'Велосипед, свежий воздух и отличный заработок. За год купил новый байк и накопил на отпуск. Лучше офиса в 100 раз!', rating: 5 }
             ].map((review, idx) => (
               <Card key={idx} className="hover:shadow-lg transition-shadow">
                 <CardHeader>
