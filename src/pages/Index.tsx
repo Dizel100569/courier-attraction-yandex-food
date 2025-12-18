@@ -221,6 +221,16 @@ export default function Index() {
           </Accordion>
         </section>
 
+        <section className="mb-24">
+          <div className="rounded-3xl overflow-hidden shadow-2xl">
+            <img 
+              src="https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/c6562352-a85a-476d-a252-c510b8c1795d.jpg" 
+              alt="Курьер Яндекс Еда" 
+              className="w-full h-[500px] object-cover"
+            />
+          </div>
+        </section>
+
         <Footer />
       </div>
     </div>
