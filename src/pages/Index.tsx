@@ -35,9 +35,11 @@ export default function Index() {
               </div>
               <h1 className="text-3xl font-black">Яндекс Еда</h1>
             </div>
-            <Button variant="outline" size="lg" className="hidden md:flex items-center gap-2">
-              <Icon name="Phone" size={18} />
-              8 800 600-01-11
+            <Button variant="outline" size="lg" className="hidden md:flex items-center gap-2" asChild>
+              <a href="tel:88006000111">
+                <Icon name="Phone" size={18} />
+                8 800 600-01-11
+              </a>
             </Button>
           </div>
         </header>
@@ -293,18 +295,34 @@ export default function Index() {
               </div>
               <h3 className="text-2xl font-black">Яндекс Еда</h3>
             </div>
-            <div className="flex justify-center gap-6 text-muted-foreground">
-              <a href="#" className="hover:text-primary transition-colors">О компании</a>
-              <a href="#" className="hover:text-primary transition-colors">Вакансии</a>
-              <a href="#" className="hover:text-primary transition-colors">Поддержка</a>
-              <a href="#" className="hover:text-primary transition-colors">Контакты</a>
+            <div className="space-y-4">
+              <div className="flex flex-col items-center gap-3">
+                <a href="tel:88006000111" className="flex items-center gap-2 text-lg font-semibold hover:text-primary transition-colors">
+                  <Icon name="Phone" size={20} />
+                  8 800 600-01-11
+                </a>
+                <a href="https://t.me/yandex_eda_courier" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-lg font-semibold hover:text-primary transition-colors">
+                  <Icon name="Send" size={20} />
+                  @yandex_eda_courier
+                </a>
+              </div>
+              <div className="flex justify-center gap-6 text-muted-foreground text-sm">
+                <a href="#" className="hover:text-primary transition-colors">О компании</a>
+                <a href="#" className="hover:text-primary transition-colors">Вакансии</a>
+                <a href="#" className="hover:text-primary transition-colors">Поддержка</a>
+                <a href="#" className="hover:text-primary transition-colors">Контакты</a>
+              </div>
             </div>
             <div className="flex justify-center gap-4">
-              {['Instagram', 'Youtube', 'Send'].map((social) => (
-                <button key={social} className="w-12 h-12 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground transition-colors flex items-center justify-center">
-                  <Icon name={social as any} size={20} />
-                </button>
-              ))}
+              <a href="https://www.instagram.com/yandex.eda" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground transition-colors flex items-center justify-center">
+                <Icon name="Instagram" size={20} />
+              </a>
+              <a href="https://www.youtube.com/@yandexeda" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground transition-colors flex items-center justify-center">
+                <Icon name="Youtube" size={20} />
+              </a>
+              <a href="https://t.me/yandex_eda_courier" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground transition-colors flex items-center justify-center">
+                <Icon name="Send" size={20} />
+              </a>
             </div>
             <p className="text-sm text-muted-foreground">© 2024 Яндекс Еда. Все права защищены.</p>
           </div>
