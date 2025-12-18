@@ -145,12 +145,13 @@ export default function Index() {
 
         <IncomeCalculator />
 
-        <section id="reviews" className="mb-24">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Отзывы курьеров</h2>
-            <p className="text-lg text-muted-foreground">Реальный опыт работы от наших сотрудников</p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <section id="reviews" className="mb-24 bg-primary/10 py-16 -mx-4 px-4">
+          <div className="container mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Отзывы курьеров</h2>
+              <p className="text-lg text-muted-foreground">Реальный опыт работы от наших сотрудников</p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { name: 'Алексей', age: '24 года', income: '215 000₽', review: 'Работаю 5 месяцев. Отличный заработок при свободном графике. Успеваю учиться и зарабатывать!', rating: 5, photo: 'https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/550e6c73-8013-44fb-8ac2-71e32b05ac18.jpg' },
               { name: 'Мария', age: '28 лет', income: '192 000₽', review: 'Совмещаю с основной работой по вечерам. За 3-4 часа делаю дополнительные 50к в месяц. Супер!', rating: 5, photo: 'https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/718dbe92-f7f7-429b-8fa7-ad8a7e8586ca.jpg' },
@@ -189,6 +190,7 @@ export default function Index() {
                 </CardHeader>
               </Card>
             ))}
+            </div>
           </div>
         </section>
 
