@@ -37,40 +37,51 @@ export default function IncomeCalculator() {
             <CardDescription className="text-base">Рассчитайте свой потенциальный заработок</CardDescription>
           </CardHeader>
           <CardContent className="space-y-8">
-            <div className="space-y-6">
-              <div className="rounded-2xl overflow-hidden shadow-lg">
-                <img 
-                  src={courierImages[courierType]} 
-                  alt={`${courierType === 'walking' ? 'Пеший курьер' : courierType === 'bike' ? 'Велокурьер' : 'Автокурьер'}`}
-                  className="w-full h-[300px] object-cover"
-                />
-              </div>
+            <div className="space-y-4">
               <p className="text-base font-medium text-center mb-4">Выберите тип курьера:</p>
-              <div className="grid grid-cols-3 gap-3">
-                <Button
-                  variant={courierType === 'walking' ? 'default' : 'outline'}
-                  className="flex flex-col items-center gap-2 h-auto py-4"
+              <div className="grid grid-cols-3 gap-4">
+                <div 
                   onClick={() => setCourierType('walking')}
+                  className={`cursor-pointer rounded-xl overflow-hidden transition-all ${courierType === 'walking' ? 'ring-4 ring-primary shadow-xl' : 'opacity-70 hover:opacity-100'}`}
                 >
-                  <Icon name="PersonStanding" size={32} />
-                  <span className="text-sm font-medium">Пеший</span>
-                </Button>
-                <Button
-                  variant={courierType === 'bike' ? 'default' : 'outline'}
-                  className="flex flex-col items-center gap-2 h-auto py-4"
+                  <img 
+                    src={courierImages.walking} 
+                    alt="Пеший курьер"
+                    className="w-full h-[200px] object-cover"
+                  />
+                  <div className={`p-3 text-center font-semibold ${courierType === 'walking' ? 'bg-primary text-primary-foreground' : 'bg-muted'}`}>
+                    <Icon name="PersonStanding" size={24} className="mx-auto mb-1" />
+                    <div className="text-sm">Пеший</div>
+                  </div>
+                </div>
+                <div 
                   onClick={() => setCourierType('bike')}
+                  className={`cursor-pointer rounded-xl overflow-hidden transition-all ${courierType === 'bike' ? 'ring-4 ring-primary shadow-xl' : 'opacity-70 hover:opacity-100'}`}
                 >
-                  <Icon name="Bike" size={32} />
-                  <span className="text-sm font-medium">Велокурьер</span>
-                </Button>
-                <Button
-                  variant={courierType === 'car' ? 'default' : 'outline'}
-                  className="flex flex-col items-center gap-2 h-auto py-4"
+                  <img 
+                    src={courierImages.bike} 
+                    alt="Велокурьер"
+                    className="w-full h-[200px] object-cover"
+                  />
+                  <div className={`p-3 text-center font-semibold ${courierType === 'bike' ? 'bg-primary text-primary-foreground' : 'bg-muted'}`}>
+                    <Icon name="Bike" size={24} className="mx-auto mb-1" />
+                    <div className="text-sm">Велокурьер</div>
+                  </div>
+                </div>
+                <div 
                   onClick={() => setCourierType('car')}
+                  className={`cursor-pointer rounded-xl overflow-hidden transition-all ${courierType === 'car' ? 'ring-4 ring-primary shadow-xl' : 'opacity-70 hover:opacity-100'}`}
                 >
-                  <Icon name="Car" size={32} />
-                  <span className="text-sm font-medium">Автокурьер</span>
-                </Button>
+                  <img 
+                    src={courierImages.car} 
+                    alt="Автокурьер"
+                    className="w-full h-[200px] object-cover"
+                  />
+                  <div className={`p-3 text-center font-semibold ${courierType === 'car' ? 'bg-primary text-primary-foreground' : 'bg-muted'}`}>
+                    <Icon name="Car" size={24} className="mx-auto mb-1" />
+                    <div className="text-sm">Автокурьер</div>
+                  </div>
+                </div>
               </div>
             </div>
             <div className="space-y-4">

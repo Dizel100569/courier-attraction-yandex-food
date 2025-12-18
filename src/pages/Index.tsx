@@ -15,12 +15,13 @@ export default function Index() {
         <Header />
 
         <section className="mb-24 relative overflow-hidden rounded-3xl" style={{
-          backgroundImage: 'url(https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/f3df6ee4-1773-4cef-a63b-33d9dd96fa7c.jpg)',
+          backgroundImage: 'url(https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/c9545df0-21f0-4468-a55b-e89c9cc8ad06.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)'
+          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+          filter: 'contrast(1.2) saturate(1.3) brightness(1.1)'
         }}>
-          <div className="absolute inset-0 bg-gradient-to-r from-foreground/85 via-foreground/75 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-foreground/75 via-foreground/65 to-transparent"></div>
           <div className="relative z-10 grid lg:grid-cols-2 gap-16 items-center py-16 px-8">
             <div className="space-y-8">
               <div className="inline-block">
@@ -194,12 +195,13 @@ export default function Index() {
         <ApplicationForm />
 
         <section className="mb-24 relative overflow-hidden rounded-3xl" style={{
-          backgroundImage: 'url(https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/347d3291-a386-49af-81f9-06993bec81ad.jpg)',
+          backgroundImage: 'url(https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/15311810-141e-4ad3-b2ea-be4f593bdd12.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)'
+          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+          filter: 'contrast(1.2) saturate(1.3) brightness(1.1)'
         }}>
-          <div className="absolute inset-0 bg-gradient-to-r from-foreground/80 via-foreground/70 to-foreground/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-foreground/70 via-foreground/60 to-foreground/70"></div>
           <div className="relative z-10 py-32 px-8 text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-background">Присоединяйся к команде</h2>
             <p className="text-xl text-background/90 mb-8 max-w-2xl mx-auto">Тысячи курьеров уже работают с нами и зарабатывают на своих условиях</p>
