@@ -45,17 +45,20 @@ export default function Index() {
 
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-muted/20 to-background">
-      <div className="container mx-auto px-4 py-8">
-        <header className="mb-12 animate-fade-in">
+    <div className="min-h-screen bg-background">
+      <div className="container mx-auto px-4 py-6">
+        <header className="mb-16 border-b pb-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-primary rounded-2xl flex items-center justify-center transform rotate-12 hover:rotate-0 transition-transform duration-300">
-                <Icon name="Bike" className="text-foreground" size={28} />
+              <div className="w-14 h-14 bg-primary rounded-lg flex items-center justify-center">
+                <Icon name="Bike" className="text-primary-foreground" size={32} />
               </div>
-              <h1 className="text-3xl font-black">Яндекс Еда</h1>
+              <div>
+                <h1 className="text-2xl font-bold text-foreground">Яндекс Еда</h1>
+                <p className="text-sm text-muted-foreground">Официальное трудоустройство</p>
+              </div>
             </div>
-            <Button variant="outline" size="lg" className="hidden md:flex items-center gap-2" asChild>
+            <Button size="lg" className="hidden md:flex items-center gap-2" asChild>
               <a href="tel:88006000111">
                 <Icon name="Phone" size={18} />
                 8 800 600-01-11
@@ -64,35 +67,49 @@ export default function Index() {
           </div>
         </header>
 
-        <section className="mb-20 animate-fade-in-up">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
+        <section className="mb-24">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
               <div className="inline-block">
-                <Badge className="text-lg px-4 py-2 bg-primary text-primary-foreground hover:bg-primary/90">
-                  🚀 Стань курьером
+                <Badge variant="outline" className="text-sm px-4 py-2 border-primary text-primary font-semibold">
+                  Официальное трудоустройство
                 </Badge>
               </div>
-              <h2 className="text-5xl md:text-7xl font-black leading-tight">
-                Зарабатывай <span className="text-primary">до 180 000₽</span> в месяц
+              <h2 className="text-4xl md:text-5xl font-bold leading-tight text-foreground">
+                Работа курьером в Яндекс Еда
               </h2>
-              <p className="text-xl text-muted-foreground leading-relaxed">
-                Доставляй заказы на самокате, велосипеде или автомобиле. Выбирай удобный график и получай стабильный доход каждую неделю.
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Официальное трудоустройство с полным социальным пакетом. Стабильный доход от 120 000₽ до 180 000₽ в месяц, свободный график работы и выплаты два раза в неделю.
               </p>
-              <div className="flex flex-wrap gap-4 pt-4">
+              <div className="grid grid-cols-3 gap-4 py-4">
+                <div className="text-center p-4 bg-muted rounded-lg">
+                  <div className="text-3xl font-bold text-primary">180К₽</div>
+                  <div className="text-sm text-muted-foreground mt-1">Максимальный доход</div>
+                </div>
+                <div className="text-center p-4 bg-muted rounded-lg">
+                  <div className="text-3xl font-bold text-primary">2х</div>
+                  <div className="text-sm text-muted-foreground mt-1">Выплаты в неделю</div>
+                </div>
+                <div className="text-center p-4 bg-muted rounded-lg">
+                  <div className="text-3xl font-bold text-primary">24/7</div>
+                  <div className="text-sm text-muted-foreground mt-1">Поддержка</div>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-4">
                 <Button 
                   size="lg" 
-                  className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all"
+                  className="px-8 py-6"
                   asChild
                 >
-                  <a href="https://reg.eda.yandex.ru/?advertisement_campaign=forms_for_agents&user_invite_code=97ea05f4a54f41f59d3b2aafca5efea2&utm_content=blank" target="_blank" rel="noopener noreferrer">
-                    Оставить заявку
-                    <Icon name="ArrowRight" className="ml-2" size={20} />
+                  <a href="#application-form">
+                    Подать заявку
+                    <Icon name="ArrowRight" className="ml-2" size={18} />
                   </a>
                 </Button>
                 <Button 
                   size="lg" 
                   variant="outline" 
-                  className="text-lg px-8 py-6"
+                  className="px-8 py-6"
                   onClick={() => {
                     document.getElementById('benefits')?.scrollIntoView({ 
                       behavior: 'smooth',
@@ -100,87 +117,88 @@ export default function Index() {
                     });
                   }}
                 >
-                  <Icon name="Play" className="mr-2" size={20} />
-                  Как это работает
+                  Подробнее об условиях
                 </Button>
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-square bg-gradient-to-br from-primary/20 via-secondary/20 to-primary/20 rounded-[3rem] p-8 animate-float">
-                <div className="w-full h-full bg-card rounded-[2rem] shadow-2xl flex items-center justify-center overflow-hidden">
-                  <img 
-                    src="https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/f3df6ee4-1773-4cef-a63b-33d9dd96fa7c.jpg" 
-                    alt="Курьер на самокате" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-              <div className="absolute -top-6 -right-6 w-32 h-32 bg-secondary rounded-3xl shadow-xl flex items-center justify-center animate-scale-in">
-                <span className="text-4xl font-black text-secondary-foreground">2.5К</span>
-              </div>
-              <div className="absolute -bottom-6 -left-6 w-40 h-40 bg-primary rounded-3xl shadow-xl flex flex-col items-center justify-center animate-scale-in" style={{ animationDelay: '0.2s' }}>
-                <span className="text-5xl font-black text-primary-foreground">180К₽</span>
-                <span className="text-sm text-primary-foreground/80">в месяц</span>
-              </div>
+              <Card className="overflow-hidden shadow-xl">
+                <img 
+                  src="https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/f3df6ee4-1773-4cef-a63b-33d9dd96fa7c.jpg" 
+                  alt="Курьер доставляет заказы" 
+                  className="w-full h-[500px] object-cover"
+                />
+              </Card>
             </div>
           </div>
         </section>
 
-        <section id="benefits" className="mb-20">
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-            <div className="relative h-[400px] rounded-[3rem] overflow-hidden shadow-2xl animate-fade-in">
-              <img 
-                src="https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/1b65d71d-94ed-4d87-a16b-fbaae24c83b9.jpg" 
-                alt="Счастливый курьер" 
-                className="w-full h-full object-cover"
-              />
+        <section id="benefits" className="mb-24 bg-muted/30 py-16 -mx-4 px-4">
+          <div className="container mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Преимущества работы курьером</h2>
+              <p className="text-lg text-muted-foreground">Комфортные условия и стабильный доход</p>
             </div>
-            <div className="relative h-[400px] rounded-[3rem] overflow-hidden shadow-2xl animate-fade-in" style={{ animationDelay: '0.2s' }}>
-              <img 
-                src="https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/14654de9-7d3e-4f80-b340-0ed7f67afb5e.jpg" 
-                alt="Команда курьеров" 
-                className="w-full h-full object-cover"
-              />
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { icon: 'Clock', title: 'Свободный график', desc: 'Выбирайте удобное время работы. Совмещайте с учёбой или основной работой' },
+                { icon: 'Wallet', title: 'Стабильный доход', desc: 'От 120 000₽ до 180 000₽ в месяц. Выплаты два раза в неделю без задержек' },
+                { icon: 'Headphones', title: 'Техподдержка 24/7', desc: 'Круглосуточная поддержка курьеров. Быстрое решение любых вопросов' },
+                { icon: 'Shield', title: 'Официальное оформление', desc: 'Полный социальный пакет, страхование, соблюдение трудового законодательства' },
+                { icon: 'Smartphone', title: 'Удобное приложение', desc: 'Простой интерфейс для управления заказами, статистикой и выплатами' },
+                { icon: 'TrendingUp', title: 'Карьерный рост', desc: 'Система рейтингов и бонусов. Возможность стать наставником или менеджером' }
+              ].map((benefit, idx) => (
+                <Card key={idx} className="hover:shadow-lg transition-shadow">
+                  <CardHeader>
+                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                      <Icon name={benefit.icon as any} size={24} className="text-primary" />
+                    </div>
+                    <CardTitle className="text-xl mb-2">{benefit.title}</CardTitle>
+                    <CardDescription className="text-base leading-relaxed">{benefit.desc}</CardDescription>
+                  </CardHeader>
+                </Card>
+              ))}
             </div>
           </div>
-          <div className="text-center mb-12 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-black mb-4">Почему выбирают нас</h2>
-            <p className="text-xl text-muted-foreground">Тысячи курьеров уже зарабатывают с Яндекс Едой</p>
+        </section>
+        
+        <section className="mb-24">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Как начать работать</h2>
+            <p className="text-lg text-muted-foreground">Простой процесс трудоустройства за 3 шага</p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-8">
             {[
-              { icon: 'Clock', title: 'Гибкий график', desc: 'Работай когда удобно — выбирай смены сам', color: 'bg-blue-500/10 text-blue-600' },
-              { icon: 'Wallet', title: 'Высокий доход', desc: 'До 180 000₽ в месяц + бонусы и чаевые', color: 'bg-green-500/10 text-green-600' },
-              { icon: 'Headphones', title: 'Поддержка 24/7', desc: 'Всегда на связи — решим любую проблему', color: 'bg-purple-500/10 text-purple-600' },
-              { icon: 'TrendingUp', title: 'Быстрый рост', desc: 'Повышай рейтинг и зарабатывай больше', color: 'bg-orange-500/10 text-orange-600' },
-              { icon: 'Smartphone', title: 'Простое приложение', desc: 'Интуитивный интерфейс — разберется каждый', color: 'bg-pink-500/10 text-pink-600' },
-              { icon: 'Award', title: 'Бонусы и премии', desc: 'Получай награды за отличную работу', color: 'bg-yellow-500/10 text-yellow-600' }
-            ].map((benefit, idx) => (
-              <Card key={idx} className="border-2 hover:border-primary/50 transition-all hover:shadow-lg hover:scale-105 duration-300 animate-fade-in" style={{ animationDelay: `${idx * 0.1}s` }}>
-                <CardHeader>
-                  <div className={`w-16 h-16 rounded-2xl ${benefit.color} flex items-center justify-center mb-4`}>
-                    <Icon name={benefit.icon as any} size={32} />
+              { step: '1', icon: 'FileText', title: 'Оставьте заявку', desc: 'Заполните простую форму на сайте. Мы свяжемся с вами в течение 24 часов' },
+              { step: '2', icon: 'UserCheck', title: 'Пройдите собеседование', desc: 'Короткая встреча онлайн или в офисе. Расскажем об условиях и ответим на вопросы' },
+              { step: '3', icon: 'Rocket', title: 'Начните зарабатывать', desc: 'Получите доступ к приложению и начните принимать заказы уже на следующий день' }
+            ].map((step, idx) => (
+              <Card key={idx} className="text-center relative overflow-hidden">
+                <div className="absolute top-4 right-4 text-6xl font-bold text-primary/10">{step.step}</div>
+                <CardHeader className="pt-8">
+                  <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center mx-auto mb-4">
+                    <Icon name={step.icon as any} size={28} className="text-primary-foreground" />
                   </div>
-                  <CardTitle className="text-2xl">{benefit.title}</CardTitle>
-                  <CardDescription className="text-base">{benefit.desc}</CardDescription>
+                  <CardTitle className="text-xl mb-3">{step.title}</CardTitle>
+                  <CardDescription className="text-base leading-relaxed">{step.desc}</CardDescription>
                 </CardHeader>
               </Card>
             ))}
           </div>
         </section>
 
-        <section className="mb-20">
-          <Card className="border-4 border-primary/20 shadow-2xl overflow-hidden animate-scale-in">
-            <div className="bg-gradient-to-r from-primary/10 via-secondary/10 to-primary/10 p-8">
-              <CardHeader className="text-center pb-8">
-                <CardTitle className="text-4xl font-black mb-4">💰 Калькулятор дохода</CardTitle>
-                <CardDescription className="text-lg">Узнай, сколько сможешь зарабатывать</CardDescription>
+        <section className="mb-24">
+          <Card className="border shadow-lg overflow-hidden max-w-4xl mx-auto">
+            <div className="bg-muted/50 p-8">
+              <CardHeader className="text-center pb-6">
+                <CardTitle className="text-3xl font-bold mb-2">Калькулятор дохода</CardTitle>
+                <CardDescription className="text-base">Рассчитайте свой потенциальный заработок</CardDescription>
               </CardHeader>
               <CardContent className="space-y-8">
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
-                    <span className="text-lg font-semibold">Сколько часов в день готов работать?</span>
-                    <Badge variant="secondary" className="text-xl px-4 py-2">{hoursPerDay[0]} часов</Badge>
+                    <span className="text-base font-medium">Количество рабочих часов в день:</span>
+                    <Badge variant="secondary" className="text-lg px-4 py-2">{hoursPerDay[0]} ч</Badge>
                   </div>
                   <Slider
                     value={hoursPerDay}
@@ -195,10 +213,10 @@ export default function Index() {
                     <span>12 часов</span>
                   </div>
                 </div>
-                <div className="bg-card rounded-3xl p-8 shadow-lg border-4 border-primary">
+                <div className="bg-background rounded-lg p-8 border-2 border-primary">
                   <div className="text-center space-y-2">
-                    <p className="text-muted-foreground text-lg">Твой доход в месяц:</p>
-                    <p className="text-6xl font-black text-primary animate-pulse">{calculateIncome().toLocaleString('ru-RU')} ₽</p>
+                    <p className="text-muted-foreground text-base">Ваш ежемесячный доход:</p>
+                    <p className="text-5xl font-bold text-primary">{calculateIncome().toLocaleString('ru-RU')} ₽</p>
                     <p className="text-sm text-muted-foreground">≈ {Math.round(calculateIncome() / 22).toLocaleString('ru-RU')} ₽ в день</p>
                   </div>
                 </div>
@@ -221,10 +239,10 @@ export default function Index() {
           </Card>
         </section>
 
-        <section className="mb-20">
-          <div className="text-center mb-12 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-black mb-4">Отзывы курьеров</h2>
-            <p className="text-xl text-muted-foreground">Реальные истории успеха</p>
+        <section className="mb-24">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Отзывы курьеров</h2>
+            <p className="text-lg text-muted-foreground">Реальный опыт работы от наших сотрудников</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
@@ -238,37 +256,37 @@ export default function Index() {
               { name: 'Ольга', age: '30 лет', income: '160 000₽', review: 'Совмещаю с воспитанием ребёнка. Работаю когда удобно, делаю хорошие деньги. Идеальный вариант для мам!', rating: 5 },
               { name: 'Артём', age: '27 лет', income: '175 000₽', review: 'Велосипед, свежий воздух и отличный заработок. За год купил новый байк и накопил на отпуск. Лучше офиса в 100 раз!', rating: 5 }
             ].map((review, idx) => (
-              <Card key={idx} className="hover:shadow-xl transition-shadow animate-slide-in-right" style={{ animationDelay: `${idx * 0.15}s` }}>
+              <Card key={idx} className="hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex gap-3">
-                      <div className="w-14 h-14 bg-primary rounded-full flex items-center justify-center text-2xl font-bold text-primary-foreground">
+                      <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-xl font-semibold text-primary">
                         {review.name[0]}
                       </div>
                       <div>
-                        <CardTitle className="text-xl">{review.name}</CardTitle>
+                        <CardTitle className="text-lg">{review.name}</CardTitle>
                         <p className="text-sm text-muted-foreground">{review.age}</p>
                       </div>
                     </div>
-                    <Badge className="bg-secondary text-secondary-foreground">{review.income}</Badge>
+                    <Badge variant="secondary" className="font-semibold">{review.income}</Badge>
                   </div>
                   <div className="flex gap-1 mb-3">
                     {[...Array(review.rating)].map((_, i) => (
-                      <Icon key={i} name="Star" className="fill-primary text-primary" size={18} />
+                      <Icon key={i} name="Star" className="fill-primary text-primary" size={16} />
                     ))}
                   </div>
-                  <CardDescription className="text-base leading-relaxed">{review.review}</CardDescription>
+                  <CardDescription className="text-sm leading-relaxed">{review.review}</CardDescription>
                 </CardHeader>
               </Card>
             ))}
           </div>
         </section>
 
-        <section className="mb-20">
-          <Card className="max-w-2xl mx-auto border-4 border-primary shadow-2xl animate-scale-in">
-            <CardHeader className="text-center bg-gradient-to-r from-primary/10 via-secondary/10 to-primary/10">
-              <CardTitle className="text-4xl font-black mb-2">🚀 Подать заявку</CardTitle>
-              <CardDescription className="text-lg">Нажми кнопку и начни зарабатывать уже завтра</CardDescription>
+        <section id="application-form" className="mb-24">
+          <Card className="max-w-2xl mx-auto border shadow-lg">
+            <CardHeader className="text-center bg-muted/30">
+              <CardTitle className="text-3xl font-bold mb-2">Форма заявки на трудоустройство</CardTitle>
+              <CardDescription className="text-base">Заполните данные и мы свяжемся с вами в течение 24 часов</CardDescription>
             </CardHeader>
             <CardContent className="pt-8">
               {submitted ? (
@@ -278,56 +296,56 @@ export default function Index() {
                   <p className="text-muted-foreground">Мы свяжемся с тобой в ближайшее время</p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="space-y-2">
-                    <Label htmlFor="name" className="text-base font-semibold">Твоё имя *</Label>
+                    <Label htmlFor="name" className="text-sm font-medium">Имя и фамилия *</Label>
                     <Input
                       id="name"
                       name="name"
                       type="text"
-                      placeholder="Например: Алексей"
+                      placeholder="Иванов Иван"
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="h-12 text-base"
+                      className="h-11"
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="phone" className="text-base font-semibold">Номер телефона *</Label>
+                    <Label htmlFor="phone" className="text-sm font-medium">Номер телефона *</Label>
                     <Input
                       id="phone"
                       name="phone"
                       type="tel"
-                      placeholder="+7 (___) ___-__-__"
+                      placeholder="+7 (999) 123-45-67"
                       value={formData.phone}
                       onChange={handleInputChange}
                       required
-                      className="h-12 text-base"
+                      className="h-11"
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="city" className="text-base font-semibold">Твой город *</Label>
+                    <Label htmlFor="city" className="text-sm font-medium">Город проживания *</Label>
                     <Input
                       id="city"
                       name="city"
                       type="text"
-                      placeholder="Например: Москва"
+                      placeholder="Москва"
                       value={formData.city}
                       onChange={handleInputChange}
                       required
-                      className="h-12 text-base"
+                      className="h-11"
                     />
                   </div>
                   <Button
                     type="submit"
                     size="lg"
-                    className="w-full text-xl py-7 bg-primary hover:bg-primary/90 text-primary-foreground font-bold"
+                    className="w-full py-6 font-semibold"
                   >
                     Отправить заявку
-                    <Icon name="Send" className="ml-2" size={20} />
+                    <Icon name="ArrowRight" className="ml-2" size={18} />
                   </Button>
-                  <p className="text-sm text-center text-muted-foreground">
-                    Нажимая кнопку, ты соглашаешься с условиями обработки данных
+                  <p className="text-xs text-center text-muted-foreground">
+                    Нажимая кнопку, вы соглашаетесь с <a href="#" className="underline">политикой обработки персональных данных</a>
                   </p>
                 </form>
               )}
@@ -335,24 +353,27 @@ export default function Index() {
           </Card>
         </section>
 
-        <section className="mb-20">
-          <div className="text-center mb-12 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-black mb-4">Вопросы и ответы</h2>
-            <p className="text-xl text-muted-foreground">Ответы на популярные вопросы</p>
+        <section className="mb-24">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Часто задаваемые вопросы</h2>
+            <p className="text-lg text-muted-foreground">Ответы на популярные вопросы о работе курьером</p>
           </div>
-          <Accordion type="single" collapsible className="max-w-3xl mx-auto space-y-4">
+          <Accordion type="single" collapsible className="max-w-3xl mx-auto space-y-3">
             {[
-              { q: 'Какие требования к курьеру?', a: 'Возраст от 18 лет, наличие смартфона и желание зарабатывать. Транспорт можем предоставить (самокат или велосипед в аренду).' },
-              { q: 'Как быстро можно начать работать?', a: 'После одобрения заявки (обычно 1-2 дня) проходишь быстрое обучение онлайн и можешь сразу выходить на заказы.' },
-              { q: 'Когда и как выплачивается зарплата?', a: 'Выплаты 2 раза в неделю на банковскую карту. Деньги приходят автоматически после закрытия отчетного периода.' },
-              { q: 'Нужен ли свой транспорт?', a: 'Не обязательно. Можем предоставить самокат или велосипед в аренду по выгодной цене. Также можешь работать пешком или на своём транспорте.' },
-              { q: 'Можно ли совмещать с учёбой/работой?', a: 'Да! Многие наши курьеры работают по гибкому графику — выбираешь удобные смены сам через приложение.' }
+              { q: 'Какие требования для трудоустройства курьером?', a: 'Базовые требования: возраст от 18 лет, гражданство РФ или разрешение на работу, наличие смартфона с доступом в интернет. Опыт работы курьером не требуется — мы обучим всему необходимому.' },
+              { q: 'Как быстро можно начать работать после подачи заявки?', a: 'Процесс трудоустройства занимает 2-3 рабочих дня. После одобрения заявки вы проходите онлайн-обучение (1-2 часа), получаете доступ к приложению и можете сразу выходить на заказы.' },
+              { q: 'Какой график работы и можно ли его менять?', a: 'График полностью гибкий — вы сами выбираете удобные смены через приложение. Можно работать полный день, несколько часов в день или только по выходным. Минимальных требований по количеству смен нет.' },
+              { q: 'Когда и как выплачивается заработная плата?', a: 'Выплаты производятся два раза в неделю (вторник и пятница) автоматически на банковскую карту. Вся статистика заработка доступна в личном кабинете приложения в реальном времени.' },
+              { q: 'Нужен ли собственный транспорт для работы курьером?', a: 'Собственный транспорт не обязателен. Мы предоставляем в аренду электросамокаты и велосипеды по льготной цене. Также можно работать пешком в зоне пешеходных доставок или использовать свой транспорт (велосипед, самокат, автомобиль).' },
+              { q: 'Какая система оплаты и из чего складывается доход?', a: 'Доход формируется из: базовой ставки за доставку (от 250₽), надбавок за сложность заказа, бонусов за выполнение плана, чаевых от клиентов. Средний заработок при 8-часовом графике составляет 3000-4000₽ в день.' },
+              { q: 'Предоставляется ли экипировка и оборудование?', a: 'Да, при трудоустройстве вы получаете: термосумку для доставки, фирменную куртку (сезонную), держатель для смартфона. Вся экипировка предоставляется бесплатно и остается у вас.' },
+              { q: 'Есть ли поддержка и помощь во время работы?', a: 'Работает служба поддержки курьеров 24/7. Вы можете обратиться по любому вопросу через чат в приложении или по телефону. Среднее время ответа — 3-5 минут. Также есть наставники, которые помогают новичкам в первые дни работы.' }
             ].map((faq, idx) => (
-              <AccordionItem key={idx} value={`item-${idx}`} className="border-2 rounded-2xl px-6 bg-card hover:border-primary/50 transition-colors">
-                <AccordionTrigger className="text-lg font-semibold hover:no-underline py-6">
+              <AccordionItem key={idx} value={`item-${idx}`} className="border rounded-lg px-6 bg-card hover:bg-muted/50 transition-colors">
+                <AccordionTrigger className="text-base font-medium hover:no-underline py-5">
                   {faq.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-base text-muted-foreground pb-6">
+                <AccordionContent className="text-sm text-muted-foreground leading-relaxed pb-5">
                   {faq.a}
                 </AccordionContent>
               </AccordionItem>
@@ -360,22 +381,25 @@ export default function Index() {
           </Accordion>
         </section>
 
-        <footer className="text-center py-12 border-t">
-          <div className="space-y-6">
+        <footer className="text-center py-12 border-t bg-muted/20 mt-16">
+          <div className="container mx-auto space-y-6">
             <div className="flex items-center justify-center gap-3">
-              <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
-                <Icon name="Bike" className="text-foreground" size={24} />
+              <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
+                <Icon name="Bike" className="text-primary-foreground" size={28} />
               </div>
-              <h3 className="text-2xl font-black">Яндекс Еда</h3>
+              <div className="text-left">
+                <h3 className="text-xl font-bold">Яндекс Еда</h3>
+                <p className="text-sm text-muted-foreground">Официальное трудоустройство</p>
+              </div>
             </div>
-            <div className="space-y-4">
-              <div className="flex flex-col items-center gap-3">
-                <a href="tel:88006000111" className="flex items-center gap-2 text-lg font-semibold hover:text-primary transition-colors">
-                  <Icon name="Phone" size={20} />
+            <div className="space-y-3">
+              <div className="flex flex-col items-center gap-2">
+                <a href="tel:88006000111" className="flex items-center gap-2 text-base font-medium hover:text-primary transition-colors">
+                  <Icon name="Phone" size={18} />
                   8 800 600-01-11
                 </a>
-                <a href="https://t.me/yandex_eda_courier" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-lg font-semibold hover:text-primary transition-colors">
-                  <Icon name="Send" size={20} />
+                <a href="https://t.me/yandex_eda_courier" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-base font-medium hover:text-primary transition-colors">
+                  <Icon name="Send" size={18} />
                   @yandex_eda_courier
                 </a>
               </div>
