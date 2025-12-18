@@ -10,6 +10,7 @@ import Icon from '@/components/ui/icon';
 
 export default function Index() {
   const [hoursPerDay, setHoursPerDay] = useState([6]);
+  const [courierType, setCourierType] = useState<'walking' | 'bike' | 'car'>('bike');
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -18,11 +19,16 @@ export default function Index() {
   const [submitted, setSubmitted] = useState(false);
 
   const calculateIncome = () => {
-    const avgOrdersPerHour = 2.5;
-    const avgPayPerOrder = 450;
+    const courierRates = {
+      walking: { ordersPerHour: 2, payPerOrder: 350 },
+      bike: { ordersPerHour: 2.5, payPerOrder: 450 },
+      car: { ordersPerHour: 3.5, payPerOrder: 550 }
+    };
+    
+    const rate = courierRates[courierType];
     const hours = hoursPerDay[0];
     const daysPerMonth = 22;
-    return Math.round(avgOrdersPerHour * avgPayPerOrder * hours * daysPerMonth);
+    return Math.round(rate.ordersPerHour * rate.payPerOrder * hours * daysPerMonth);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -73,11 +79,16 @@ export default function Index() {
           </div>
         </header>
 
-        <section className="mb-24">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <section className="mb-24 relative overflow-hidden rounded-3xl" style={{
+          backgroundImage: 'url(https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/1b65d71d-94ed-4d87-a16b-fbaae24c83b9.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}>
+          <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/90 to-background/70"></div>
+          <div className="relative z-10 grid lg:grid-cols-2 gap-16 items-center py-16 px-8">
             <div className="space-y-8">
               <div className="inline-block">
-                <Badge variant="outline" className="text-sm px-4 py-2 border-primary text-primary font-semibold">
+                <Badge variant="outline" className="text-sm px-4 py-2 border-primary text-primary font-semibold bg-background/80">
                   Официальное трудоустройство
                 </Badge>
               </div>
@@ -88,15 +99,15 @@ export default function Index() {
                 Официальное трудоустройство с полным социальным пакетом. Стабильный доход от 120 000₽ до 180 000₽ в месяц, свободный график работы и выплаты два раза в неделю.
               </p>
               <div className="grid grid-cols-3 gap-4 py-4">
-                <div className="text-center p-4 bg-muted rounded-lg">
+                <div className="text-center p-4 bg-background/90 backdrop-blur-sm rounded-lg border">
                   <div className="text-3xl font-bold text-primary">180К₽</div>
                   <div className="text-sm text-muted-foreground mt-1">Максимальный доход</div>
                 </div>
-                <div className="text-center p-4 bg-muted rounded-lg">
+                <div className="text-center p-4 bg-background/90 backdrop-blur-sm rounded-lg border">
                   <div className="text-3xl font-bold text-primary">2х</div>
                   <div className="text-sm text-muted-foreground mt-1">Выплаты в неделю</div>
                 </div>
-                <div className="text-center p-4 bg-muted rounded-lg">
+                <div className="text-center p-4 bg-background/90 backdrop-blur-sm rounded-lg border">
                   <div className="text-3xl font-bold text-primary">24/7</div>
                   <div className="text-sm text-muted-foreground mt-1">Поддержка</div>
                 </div>
@@ -127,14 +138,8 @@ export default function Index() {
                 </Button>
               </div>
             </div>
-            <div className="relative">
-              <Card className="overflow-hidden shadow-xl">
-                <img 
-                  src="https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/f3df6ee4-1773-4cef-a63b-33d9dd96fa7c.jpg" 
-                  alt="Курьер доставляет заказы" 
-                  className="w-full h-[500px] object-cover"
-                />
-              </Card>
+            <div className="relative lg:block hidden">
+              {/* Пустое пространство для фона */}
             </div>
           </div>
         </section>
@@ -202,6 +207,35 @@ export default function Index() {
               </CardHeader>
               <CardContent className="space-y-8">
                 <div className="space-y-4">
+                  <p className="text-base font-medium text-center mb-4">Выберите тип курьера:</p>
+                  <div className="grid grid-cols-3 gap-3">
+                    <Button
+                      variant={courierType === 'walking' ? 'default' : 'outline'}
+                      className="flex flex-col items-center gap-2 h-auto py-4"
+                      onClick={() => setCourierType('walking')}
+                    >
+                      <Icon name="PersonStanding" size={32} />
+                      <span className="text-sm font-medium">Пеший</span>
+                    </Button>
+                    <Button
+                      variant={courierType === 'bike' ? 'default' : 'outline'}
+                      className="flex flex-col items-center gap-2 h-auto py-4"
+                      onClick={() => setCourierType('bike')}
+                    >
+                      <Icon name="Bike" size={32} />
+                      <span className="text-sm font-medium">Велокурьер</span>
+                    </Button>
+                    <Button
+                      variant={courierType === 'car' ? 'default' : 'outline'}
+                      className="flex flex-col items-center gap-2 h-auto py-4"
+                      onClick={() => setCourierType('car')}
+                    >
+                      <Icon name="Car" size={32} />
+                      <span className="text-sm font-medium">Автокурьер</span>
+                    </Button>
+                  </div>
+                </div>
+                <div className="space-y-4">
                   <div className="flex justify-between items-center">
                     <span className="text-base font-medium">Количество рабочих часов в день:</span>
                     <Badge variant="secondary" className="text-lg px-4 py-2">{hoursPerDay[0]} ч</Badge>
@@ -229,11 +263,11 @@ export default function Index() {
                 <div className="grid md:grid-cols-3 gap-4 text-center">
                   <div className="bg-card rounded-2xl p-4">
                     <p className="text-sm text-muted-foreground mb-1">Заказов в час</p>
-                    <p className="text-3xl font-bold">~2.5</p>
+                    <p className="text-3xl font-bold">~{courierType === 'walking' ? '2' : courierType === 'bike' ? '2.5' : '3.5'}</p>
                   </div>
                   <div className="bg-card rounded-2xl p-4">
                     <p className="text-sm text-muted-foreground mb-1">За заказ</p>
-                    <p className="text-3xl font-bold">~450₽</p>
+                    <p className="text-3xl font-bold">~{courierType === 'walking' ? '350' : courierType === 'bike' ? '450' : '550'}₽</p>
                   </div>
                   <div className="bg-card rounded-2xl p-4">
                     <p className="text-sm text-muted-foreground mb-1">Рабочих дней</p>
