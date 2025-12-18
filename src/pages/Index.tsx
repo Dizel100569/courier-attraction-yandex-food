@@ -216,7 +216,7 @@ export default function Index() {
           </div>
         </section>
 
-        <section id="faq" className="mb-24">
+        <section id="faq" className="mb-24 bg-[#FFD700] py-16 -mx-4 px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Часто задаваемые вопросы</h2>
             <p className="text-lg text-muted-foreground">Ответы на популярные вопросы о работе курьером</p>
