@@ -11,7 +11,7 @@ import Footer from '@/components/Footer';
 export default function Index() {
   return (
     <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-6">
+      <div className="w-full px-4 py-6">
         <Header />
 
         <section className="mb-24 relative overflow-hidden rounded-3xl" style={{
@@ -81,7 +81,7 @@ export default function Index() {
         </section>
 
         <section id="benefits" className="mb-24 bg-[#FFD700] py-16 -mx-4 px-4">
-          <div className="container mx-auto">
+          <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Преимущества работы курьером</h2>
@@ -146,7 +146,7 @@ export default function Index() {
         <IncomeCalculator />
 
         <section id="reviews" className="mb-24 bg-[#FFD700] py-16 -mx-4 px-4">
-          <div className="container mx-auto">
+          <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Отзывы курьеров</h2>
               <p className="text-lg text-muted-foreground">Реальный опыт работы от наших сотрудников</p>
