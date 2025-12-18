@@ -201,9 +201,9 @@ export default function Index() {
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
-          filter: 'contrast(1.2) saturate(1.3) brightness(1.1)'
+          filter: 'contrast(1.2) saturate(1.3) brightness(0.85)'
         }}>
-          <div className="absolute inset-0 bg-gradient-to-r from-foreground/70 via-foreground/60 to-foreground/70"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-foreground/85 via-foreground/80 to-foreground/85"></div>
           <div className="relative z-10 py-32 px-8 text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-background">Присоединяйся к команде</h2>
             <p className="text-xl text-background/90 mb-8 max-w-2xl mx-auto">Тысячи курьеров уже работают с нами и зарабатывают на своих условиях</p>
