@@ -1,24 +1,13 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Badge } from '@/components/ui/badge';
 import { Slider } from '@/components/ui/slider';
 import Icon from '@/components/ui/icon';
-import { toast } from 'sonner';
-
-type ApplicationStatus = 'idle' | 'submitted' | 'reviewing' | 'approved';
 
 export default function Index() {
   const [hoursPerDay, setHoursPerDay] = useState([6]);
-  const [applicationStatus, setApplicationStatus] = useState<ApplicationStatus>('idle');
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    city: ''
-  });
 
   const calculateIncome = () => {
     const avgOrdersPerHour = 2.5;
@@ -30,28 +19,10 @@ export default function Index() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name || !formData.phone || !formData.city) {
-      toast.error('Заполните все поля');
-      return;
-    }
-    setApplicationStatus('submitted');
-    toast.success('Заявка отправлена! Мы свяжемся с вами в течение 24 часов');
-    setTimeout(() => setApplicationStatus('reviewing'), 2000);
-    setTimeout(() => setApplicationStatus('approved'), 4000);
+    window.open('https://reg.eda.yandex.ru/?advertisement_campaign=forms_for_agents&user_invite_code=97ea05f4a54f41f59d3b2aafca5efea2&utm_content=blank', '_blank');
   };
 
-  const getStatusBadge = () => {
-    switch (applicationStatus) {
-      case 'submitted':
-        return <Badge variant="secondary" className="animate-pulse">📤 Отправлена</Badge>;
-      case 'reviewing':
-        return <Badge variant="secondary" className="animate-pulse">🔍 На рассмотрении</Badge>;
-      case 'approved':
-        return <Badge className="bg-secondary text-secondary-foreground">✅ Одобрена</Badge>;
-      default:
-        return null;
-    }
-  };
+
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-muted/20 to-background">
@@ -259,61 +230,17 @@ export default function Index() {
           <Card className="max-w-2xl mx-auto border-4 border-primary shadow-2xl animate-scale-in">
             <CardHeader className="text-center bg-gradient-to-r from-primary/10 via-secondary/10 to-primary/10">
               <CardTitle className="text-4xl font-black mb-2">🚀 Подать заявку</CardTitle>
-              <CardDescription className="text-lg">Заполни форму и начни зарабатывать уже завтра</CardDescription>
-              {getStatusBadge() && (
-                <div className="mt-4 flex justify-center">{getStatusBadge()}</div>
-              )}
+              <CardDescription className="text-lg">Нажми кнопку и начни зарабатывать уже завтра</CardDescription>
             </CardHeader>
             <CardContent className="pt-8">
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="space-y-2">
-                  <Label htmlFor="name" className="text-lg">Твоё имя</Label>
-                  <Input
-                    id="name"
-                    placeholder="Например, Алексей"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="text-lg py-6"
-                    disabled={applicationStatus !== 'idle'}
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="phone" className="text-lg">Номер телефона</Label>
-                  <Input
-                    id="phone"
-                    type="tel"
-                    placeholder="+7 (999) 123-45-67"
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="text-lg py-6"
-                    disabled={applicationStatus !== 'idle'}
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="city" className="text-lg">Город</Label>
-                  <Input
-                    id="city"
-                    placeholder="Например, Москва"
-                    value={formData.city}
-                    onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                    className="text-lg py-6"
-                    disabled={applicationStatus !== 'idle'}
-                  />
-                </div>
                 <Button
                   type="submit"
                   size="lg"
                   className="w-full text-xl py-7 bg-primary hover:bg-primary/90 text-primary-foreground"
-                  disabled={applicationStatus !== 'idle'}
                 >
-                  {applicationStatus === 'idle' ? (
-                    <>
-                      Отправить заявку
-                      <Icon name="Send" className="ml-2" size={20} />
-                    </>
-                  ) : (
-                    'Заявка обрабатывается...'
-                  )}
+                  Отправить заявку
+                  <Icon name="Send" className="ml-2" size={20} />
                 </Button>
                 <p className="text-sm text-center text-muted-foreground">
                   Нажимая кнопку, ты соглашаешься с условиями обработки данных
