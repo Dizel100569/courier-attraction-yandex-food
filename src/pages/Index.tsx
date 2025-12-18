@@ -47,7 +47,7 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-6">
-        <header className="mb-16 border-b pb-6">
+        <header className="mb-16 border-b pb-6 sticky top-0 bg-background z-50">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="w-14 h-14 bg-primary rounded-lg flex items-center justify-center">
@@ -58,6 +58,12 @@ export default function Index() {
                 <p className="text-sm text-muted-foreground">Официальное трудоустройство</p>
               </div>
             </div>
+            <nav className="hidden lg:flex items-center gap-8">
+              <a href="#benefits" className="text-sm font-medium hover:text-primary transition-colors">Преимущества</a>
+              <a href="#calculator" className="text-sm font-medium hover:text-primary transition-colors">Калькулятор</a>
+              <a href="#faq" className="text-sm font-medium hover:text-primary transition-colors">Вопросы</a>
+              <a href="#reviews" className="text-sm font-medium hover:text-primary transition-colors">Отзывы</a>
+            </nav>
             <Button size="lg" className="hidden md:flex items-center gap-2" asChild>
               <a href="tel:88006000111">
                 <Icon name="Phone" size={18} />
@@ -187,7 +193,7 @@ export default function Index() {
           </div>
         </section>
 
-        <section className="mb-24">
+        <section id="calculator" className="mb-24">
           <Card className="border shadow-lg overflow-hidden max-w-4xl mx-auto">
             <div className="bg-muted/50 p-8">
               <CardHeader className="text-center pb-6">
@@ -239,7 +245,7 @@ export default function Index() {
           </Card>
         </section>
 
-        <section className="mb-24">
+        <section id="reviews" className="mb-24">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Отзывы курьеров</h2>
             <p className="text-lg text-muted-foreground">Реальный опыт работы от наших сотрудников</p>
@@ -353,7 +359,7 @@ export default function Index() {
           </Card>
         </section>
 
-        <section className="mb-24">
+        <section id="faq" className="mb-24">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Часто задаваемые вопросы</h2>
             <p className="text-lg text-muted-foreground">Ответы на популярные вопросы о работе курьером</p>
