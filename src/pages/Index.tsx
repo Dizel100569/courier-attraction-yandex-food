@@ -1,83 +1,18 @@
-import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Badge } from '@/components/ui/badge';
-import { Slider } from '@/components/ui/slider';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
 import Icon from '@/components/ui/icon';
+import Header from '@/components/Header';
+import IncomeCalculator from '@/components/IncomeCalculator';
+import ApplicationForm from '@/components/ApplicationForm';
+import Footer from '@/components/Footer';
 
 export default function Index() {
-  const [hoursPerDay, setHoursPerDay] = useState([6]);
-  const [courierType, setCourierType] = useState<'walking' | 'bike' | 'car'>('bike');
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    city: ''
-  });
-  const [submitted, setSubmitted] = useState(false);
-
-  const calculateIncome = () => {
-    const courierRates = {
-      walking: { ordersPerHour: 2, payPerOrder: 400 },
-      bike: { ordersPerHour: 3, payPerOrder: 550 },
-      car: { ordersPerHour: 4, payPerOrder: 700 }
-    };
-    
-    const rate = courierRates[courierType];
-    const hours = hoursPerDay[0];
-    const daysPerMonth = 22;
-    return Math.round(rate.ordersPerHour * rate.payPerOrder * hours * daysPerMonth);
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (formData.name && formData.phone && formData.city) {
-      setSubmitted(true);
-      setTimeout(() => {
-        window.open('https://reg.eda.yandex.ru/?advertisement_campaign=forms_for_agents&user_invite_code=97ea05f4a54f41f59d3b2aafca5efea2&utm_content=blank', '_blank');
-      }, 500);
-    }
-  };
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-
-
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-6">
-        <header className="mb-16 border-b pb-6 sticky top-0 bg-background z-50">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="w-14 h-14 bg-primary rounded-lg flex items-center justify-center">
-                <Icon name="Bike" className="text-primary-foreground" size={32} />
-              </div>
-              <div>
-                <h1 className="text-2xl font-bold text-foreground">Яндекс Еда</h1>
-                <p className="text-sm text-muted-foreground">Официальное трудоустройство</p>
-              </div>
-            </div>
-            <nav className="hidden lg:flex items-center gap-8">
-              <a href="#benefits" className="text-sm font-medium hover:text-primary transition-colors">Преимущества</a>
-              <a href="#calculator" className="text-sm font-medium hover:text-primary transition-colors">Калькулятор</a>
-              <a href="#faq" className="text-sm font-medium hover:text-primary transition-colors">Вопросы</a>
-              <a href="#reviews" className="text-sm font-medium hover:text-primary transition-colors">Отзывы</a>
-            </nav>
-            <Button size="lg" className="hidden md:flex items-center gap-2" asChild>
-              <a href="tel:88006000111">
-                <Icon name="Phone" size={18} />
-                8 800 600-01-11
-              </a>
-            </Button>
-          </div>
-        </header>
+        <Header />
 
         <section className="mb-24 relative overflow-hidden rounded-3xl" style={{
           backgroundImage: 'url(https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/f3df6ee4-1773-4cef-a63b-33d9dd96fa7c.jpg)',
@@ -140,7 +75,6 @@ export default function Index() {
               </div>
             </div>
             <div className="relative lg:block hidden">
-              {/* Пустое пространство для фона */}
             </div>
           </div>
         </section>
@@ -224,86 +158,7 @@ export default function Index() {
           </div>
         </section>
 
-        <section id="calculator" className="mb-24">
-          <Card className="border shadow-lg overflow-hidden max-w-4xl mx-auto">
-            <div className="bg-muted/50 p-8">
-              <CardHeader className="text-center pb-6">
-                <CardTitle className="text-3xl font-bold mb-2">Калькулятор дохода</CardTitle>
-                <CardDescription className="text-base">Рассчитайте свой потенциальный заработок</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-8">
-                <div className="space-y-4">
-                  <p className="text-base font-medium text-center mb-4">Выберите тип курьера:</p>
-                  <div className="grid grid-cols-3 gap-3">
-                    <Button
-                      variant={courierType === 'walking' ? 'default' : 'outline'}
-                      className="flex flex-col items-center gap-2 h-auto py-4"
-                      onClick={() => setCourierType('walking')}
-                    >
-                      <Icon name="PersonStanding" size={32} />
-                      <span className="text-sm font-medium">Пеший</span>
-                    </Button>
-                    <Button
-                      variant={courierType === 'bike' ? 'default' : 'outline'}
-                      className="flex flex-col items-center gap-2 h-auto py-4"
-                      onClick={() => setCourierType('bike')}
-                    >
-                      <Icon name="Bike" size={32} />
-                      <span className="text-sm font-medium">Велокурьер</span>
-                    </Button>
-                    <Button
-                      variant={courierType === 'car' ? 'default' : 'outline'}
-                      className="flex flex-col items-center gap-2 h-auto py-4"
-                      onClick={() => setCourierType('car')}
-                    >
-                      <Icon name="Car" size={32} />
-                      <span className="text-sm font-medium">Автокурьер</span>
-                    </Button>
-                  </div>
-                </div>
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center">
-                    <span className="text-base font-medium">Количество рабочих часов в день:</span>
-                    <Badge variant="secondary" className="text-lg px-4 py-2">{hoursPerDay[0]} ч</Badge>
-                  </div>
-                  <Slider
-                    value={hoursPerDay}
-                    onValueChange={setHoursPerDay}
-                    min={2}
-                    max={12}
-                    step={1}
-                    className="py-4"
-                  />
-                  <div className="flex justify-between text-sm text-muted-foreground">
-                    <span>2 часа</span>
-                    <span>12 часов</span>
-                  </div>
-                </div>
-                <div className="bg-background rounded-lg p-8 border-2 border-primary">
-                  <div className="text-center space-y-2">
-                    <p className="text-muted-foreground text-base">Ваш ежемесячный доход:</p>
-                    <p className="text-5xl font-bold text-primary">{calculateIncome().toLocaleString('ru-RU')} ₽</p>
-                    <p className="text-sm text-muted-foreground">≈ {Math.round(calculateIncome() / 22).toLocaleString('ru-RU')} ₽ в день</p>
-                  </div>
-                </div>
-                <div className="grid md:grid-cols-3 gap-4 text-center">
-                  <div className="bg-card rounded-2xl p-4">
-                    <p className="text-sm text-muted-foreground mb-1">Заказов в час</p>
-                    <p className="text-3xl font-bold">~{courierType === 'walking' ? '2' : courierType === 'bike' ? '3' : '4'}</p>
-                  </div>
-                  <div className="bg-card rounded-2xl p-4">
-                    <p className="text-sm text-muted-foreground mb-1">За заказ</p>
-                    <p className="text-3xl font-bold">~{courierType === 'walking' ? '400' : courierType === 'bike' ? '550' : '700'}₽</p>
-                  </div>
-                  <div className="bg-card rounded-2xl p-4">
-                    <p className="text-sm text-muted-foreground mb-1">Рабочих дней</p>
-                    <p className="text-3xl font-bold">22</p>
-                  </div>
-                </div>
-              </CardContent>
-            </div>
-          </Card>
-        </section>
+        <IncomeCalculator />
 
         <section id="reviews" className="mb-24">
           <div className="text-center mb-12">
@@ -352,76 +207,7 @@ export default function Index() {
           </div>
         </section>
 
-        <section id="application-form" className="mb-24">
-          <Card className="max-w-2xl mx-auto border shadow-lg">
-            <CardHeader className="text-center bg-muted/30">
-              <CardTitle className="text-3xl font-bold mb-2">Форма заявки на трудоустройство</CardTitle>
-              <CardDescription className="text-base">Заполните данные и мы свяжемся с вами в течение 24 часов</CardDescription>
-            </CardHeader>
-            <CardContent className="pt-8">
-              {submitted ? (
-                <div className="text-center space-y-4 py-8">
-                  <div className="text-6xl mb-4">✅</div>
-                  <h3 className="text-2xl font-bold text-primary">Заявка отправлена!</h3>
-                  <p className="text-muted-foreground">Мы свяжемся с тобой в ближайшее время</p>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
-                  <div className="space-y-2">
-                    <Label htmlFor="name" className="text-sm font-medium">Имя и фамилия *</Label>
-                    <Input
-                      id="name"
-                      name="name"
-                      type="text"
-                      placeholder="Иванов Иван"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      required
-                      className="h-11"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="phone" className="text-sm font-medium">Номер телефона *</Label>
-                    <Input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      placeholder="+7 (999) 123-45-67"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      required
-                      className="h-11"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="city" className="text-sm font-medium">Город проживания *</Label>
-                    <Input
-                      id="city"
-                      name="city"
-                      type="text"
-                      placeholder="Москва"
-                      value={formData.city}
-                      onChange={handleInputChange}
-                      required
-                      className="h-11"
-                    />
-                  </div>
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className="w-full py-6 font-semibold"
-                  >
-                    Отправить заявку
-                    <Icon name="ArrowRight" className="ml-2" size={18} />
-                  </Button>
-                  <p className="text-xs text-center text-muted-foreground">
-                    Нажимая кнопку, вы соглашаетесь с <a href="#" className="underline">политикой обработки персональных данных</a>
-                  </p>
-                </form>
-              )}
-            </CardContent>
-          </Card>
-        </section>
+        <ApplicationForm />
 
         <section id="faq" className="mb-24">
           <div className="text-center mb-12">
@@ -451,49 +237,7 @@ export default function Index() {
           </Accordion>
         </section>
 
-        <footer className="text-center py-12 border-t bg-muted/20 mt-16">
-          <div className="container mx-auto space-y-6">
-            <div className="flex items-center justify-center gap-3">
-              <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
-                <Icon name="Bike" className="text-primary-foreground" size={28} />
-              </div>
-              <div className="text-left">
-                <h3 className="text-xl font-bold">Яндекс Еда</h3>
-                <p className="text-sm text-muted-foreground">Официальное трудоустройство</p>
-              </div>
-            </div>
-            <div className="space-y-3">
-              <div className="flex flex-col items-center gap-2">
-                <a href="tel:88006000111" className="flex items-center gap-2 text-base font-medium hover:text-primary transition-colors">
-                  <Icon name="Phone" size={18} />
-                  8 800 600-01-11
-                </a>
-                <a href="https://t.me/yandex_eda_courier" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-base font-medium hover:text-primary transition-colors">
-                  <Icon name="Send" size={18} />
-                  @yandex_eda_courier
-                </a>
-              </div>
-              <div className="flex justify-center gap-6 text-muted-foreground text-sm">
-                <a href="#" className="hover:text-primary transition-colors">О компании</a>
-                <a href="#" className="hover:text-primary transition-colors">Вакансии</a>
-                <a href="#" className="hover:text-primary transition-colors">Поддержка</a>
-                <a href="#" className="hover:text-primary transition-colors">Контакты</a>
-              </div>
-            </div>
-            <div className="flex justify-center gap-4">
-              <a href="https://www.instagram.com/yandex.eda" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground transition-colors flex items-center justify-center">
-                <Icon name="Instagram" size={20} />
-              </a>
-              <a href="https://www.youtube.com/@yandexeda" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground transition-colors flex items-center justify-center">
-                <Icon name="Youtube" size={20} />
-              </a>
-              <a href="https://t.me/yandex_eda_courier" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground transition-colors flex items-center justify-center">
-                <Icon name="Send" size={20} />
-              </a>
-            </div>
-            <p className="text-sm text-muted-foreground">© 2024 Яндекс Еда. Все права защищены.</p>
-          </div>
-        </footer>
+        <Footer />
       </div>
     </div>
   );
