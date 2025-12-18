@@ -193,6 +193,25 @@ export default function Index() {
 
         <ApplicationForm />
 
+        <section className="mb-24 relative overflow-hidden rounded-3xl" style={{
+          backgroundImage: 'url(https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/347d3291-a386-49af-81f9-06993bec81ad.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)'
+        }}>
+          <div className="absolute inset-0 bg-gradient-to-r from-foreground/80 via-foreground/70 to-foreground/80"></div>
+          <div className="relative z-10 py-32 px-8 text-center">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-background">Присоединяйся к команде</h2>
+            <p className="text-xl text-background/90 mb-8 max-w-2xl mx-auto">Тысячи курьеров уже работают с нами и зарабатывают на своих условиях</p>
+            <Button size="lg" className="px-12 py-6 text-lg" asChild>
+              <a href="#application-form">
+                Стать курьером
+                <Icon name="ArrowRight" className="ml-2" size={20} />
+              </a>
+            </Button>
+          </div>
+        </section>
+
         <section id="faq" className="mb-24">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Часто задаваемые вопросы</h2>
@@ -219,16 +238,6 @@ export default function Index() {
               </AccordionItem>
             ))}
           </Accordion>
-        </section>
-
-        <section className="mb-24">
-          <div className="rounded-3xl overflow-hidden shadow-2xl">
-            <img 
-              src="https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/c6562352-a85a-476d-a252-c510b8c1795d.jpg" 
-              alt="Курьер Яндекс Еда" 
-              className="w-full h-[500px] object-cover"
-            />
-          </div>
         </section>
 
         <Footer />
