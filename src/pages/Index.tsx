@@ -17,7 +17,7 @@ export default function Index() {
         <section className="mb-24 relative overflow-hidden rounded-3xl" style={{
           backgroundImage: 'url(https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/c5ca2b30-ec89-48ef-83eb-e390c5313dc0.jpg)',
           backgroundSize: 'cover',
-          backgroundPosition: 'right 40%',
+          backgroundPosition: 'right 25%',
           boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
           filter: 'contrast(1.2) saturate(1.3) brightness(1.1)'
         }}>
