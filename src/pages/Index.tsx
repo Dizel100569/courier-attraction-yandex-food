@@ -15,7 +15,7 @@ export default function Index() {
         <Header />
 
         <section className="mb-24 relative overflow-hidden rounded-3xl" style={{
-          backgroundImage: 'url(https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/f137b2c0-0fa9-4136-9fac-674e11c86cee.jpg)',
+          backgroundImage: 'url(https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/1b2bbb1e-1a1c-41e0-976b-10deac3f9902.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
@@ -197,7 +197,7 @@ export default function Index() {
         <ApplicationForm />
 
         <section className="mb-24 relative overflow-hidden rounded-3xl" style={{
-          backgroundImage: 'url(https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/e7d08107-f938-4129-ab06-24c8f8cfd34c.jpg)',
+          backgroundImage: 'url(https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/2a6dee4d-2bba-43cc-ab5d-1c884073fa4e.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
