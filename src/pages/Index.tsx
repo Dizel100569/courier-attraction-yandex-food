@@ -16,27 +16,36 @@ const Index = () => {
       <div className="container mx-auto px-4 py-8">
         <Header />
         
-        <section className="text-center mb-16 md:mb-24 mt-12">
-          <div className="inline-block px-4 py-2 mb-6 rounded-full bg-primary/10 text-primary font-medium text-sm animate-pulse">
-            ⚡ Набор курьеров по всей России
-          </div>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight animate-fade-in">
-            Стань <span className="bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500 text-transparent bg-clip-text">курьером</span><br />Яндекс Еды
-          </h1>
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Гибкий график, стабильный доход до <strong className="text-foreground">150 000 ₽/месяц</strong> и работа рядом с домом
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" className="text-base px-8 shadow-lg" onClick={scrollToForm}>
-              Подать заявку
-              <Icon name="ArrowRight" className="ml-2" size={18} />
-            </Button>
-            <Button size="lg" variant="outline" className="text-base" asChild>
-              <a href="tel:88006000111">
-                <Icon name="Phone" className="mr-2" size={18} />
-                8 800 600-01-11
-              </a>
-            </Button>
+        <section className="relative overflow-hidden mb-16 md:mb-24 mt-12 -mx-4 px-4">
+          <div 
+            className="absolute inset-0 bg-cover bg-center opacity-20"
+            style={{
+              backgroundImage: 'url(https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/06866e70-b558-47cf-b01e-35181071bf93.jpg)'
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-yellow-50/90 via-orange-50/95 to-slate-50/90" />
+          <div className="relative text-center py-12 md:py-16">
+            <div className="inline-block px-4 py-2 mb-6 rounded-full bg-primary/10 text-primary font-medium text-sm animate-pulse">
+              ⚡ Набор курьеров по всей России
+            </div>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight animate-fade-in">
+              Стань <span className="bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500 text-transparent bg-clip-text">курьером</span><br />Яндекс Еды
+            </h1>
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Гибкий график, стабильный доход до <strong className="text-foreground">150 000 ₽/месяц</strong> и работа рядом с домом
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button size="lg" className="text-base px-8 shadow-lg" onClick={scrollToForm}>
+                Подать заявку
+                <Icon name="ArrowRight" className="ml-2" size={18} />
+              </Button>
+              <Button size="lg" variant="outline" className="text-base" asChild>
+                <a href="tel:88006000111">
+                  <Icon name="Phone" className="mr-2" size={18} />
+                  8 800 600-01-11
+                </a>
+              </Button>
+            </div>
           </div>
         </section>
 
