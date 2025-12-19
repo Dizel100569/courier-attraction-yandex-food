@@ -218,6 +218,53 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Pricing Section */}
+      <section className="container mx-auto px-4 py-16">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-900">
+            Стоимость курса
+          </h2>
+          <Card className="p-8 md:p-12 text-center shadow-xl border-2 border-blue-200">
+            <div className="mb-6">
+              <div className="text-5xl md:text-6xl font-bold text-blue-600 mb-2">12 900 ₽</div>
+              <div className="text-slate-600 text-lg">Полный доступ к курсу навсегда</div>
+            </div>
+            
+            <div className="bg-blue-50 rounded-xl p-6 mb-6">
+              <div className="flex items-center justify-center gap-2 mb-3">
+                <Icon name="CreditCard" className="text-blue-600" size={24} />
+                <span className="text-lg font-semibold text-slate-900">Оплата Долями</span>
+              </div>
+              <div className="text-2xl font-bold text-blue-600 mb-1">от 3 225 ₽ × 4 платежа</div>
+              <div className="text-slate-600">Доступна рассрочка без процентов</div>
+            </div>
+
+            <div className="space-y-3 text-left mb-8">
+              {[
+                "Оплата производится на защищённом сайте",
+                "После оплаты мгновенный доступ к материалам",
+                "Можете сразу приступить к изучению",
+                "Поддержка куратора на всём курсе"
+              ].map((item, index) => (
+                <div key={index} className="flex items-start gap-3">
+                  <Icon name="CheckCircle2" className="text-green-600 flex-shrink-0 mt-0.5" size={20} />
+                  <span className="text-slate-700">{item}</span>
+                </div>
+              ))}
+            </div>
+
+            <Button 
+              size="lg" 
+              className="w-full text-lg py-6 bg-blue-600 hover:bg-blue-700"
+              onClick={handleCTAClick}
+            >
+              Записаться на курс
+              <Icon name="ArrowRight" className="ml-2" size={20} />
+            </Button>
+          </Card>
+        </div>
+      </section>
+
       {/* Testimonials Section */}
       <section className="container mx-auto px-4 py-16 bg-white/50">
         <div className="max-w-5xl mx-auto">
