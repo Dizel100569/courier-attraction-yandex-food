@@ -73,7 +73,7 @@ const SocialProof = () => {
               },
               {
                 icon: "DollarSign",
-                number: "от 50 000 ₽",
+                number: "от 250 000 ₽",
                 text: "Средний доход фрилансеров после прохождения курса"
               },
               {
