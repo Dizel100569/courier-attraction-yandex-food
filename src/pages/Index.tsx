@@ -17,7 +17,7 @@ const Index = () => {
             backgroundImage: 'url(https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/c53039b8-fab5-4038-b667-849cf83716b8.jpg)'
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/80 to-slate-900/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/75 via-slate-900/65 to-slate-900/55" />
         <div className="relative container mx-auto px-4 py-20 md:py-32">
           <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
             <div className="inline-block px-4 py-2 bg-blue-500/90 rounded-full text-white text-sm font-medium mb-4">
@@ -29,7 +29,21 @@ const Index = () => {
             <p className="text-xl md:text-2xl text-blue-50 max-w-3xl mx-auto">
               Освойте профессиональное 3D-моделирование и проектирование с нуля. Базовый курс для старта карьеры.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6">
+            <div className="grid grid-cols-3 gap-4 max-w-2xl mx-auto mb-8">
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-white mb-1">2500+</div>
+                <div className="text-sm text-blue-100">Учеников</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-white mb-1">8 недель</div>
+                <div className="text-sm text-blue-100">Длительность</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-white mb-1">4.9/5</div>
+                <div className="text-sm text-blue-100">Рейтинг курса</div>
+              </div>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-2">
               <Button 
                 size="lg" 
                 className="text-lg px-8 py-6 bg-blue-600 hover:bg-blue-700"
@@ -266,7 +280,7 @@ const Index = () => {
             backgroundImage: 'url(https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/8c444f19-5037-4c77-99c1-8c00cb2eea47.jpg)'
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/95 to-slate-900/95" />
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/85 to-slate-900/85" />
         <div className="relative container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
