@@ -320,6 +320,206 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Results Showcase Section */}
+      <section className="container mx-auto px-4 py-12 md:py-16">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-8 md:mb-12 text-slate-900">
+            Результаты наших учеников
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                icon: "Briefcase",
+                number: "87%",
+                text: "Выпускников начали работать в сфере дизайна и архитектуры"
+              },
+              {
+                icon: "DollarSign",
+                number: "от 50 000 ₽",
+                text: "Средний доход фрилансеров после прохождения курса"
+              },
+              {
+                icon: "TrendingUp",
+                number: "3-6 мес",
+                text: "Выход на профессиональный уровень владения Archicad"
+              }
+            ].map((item, index) => (
+              <Card key={index} className="p-6 text-center hover:shadow-lg transition-shadow animate-fade-in-up" style={{ animationDelay: `${index * 0.1}s` }}>
+                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Icon name={item.icon} className="text-blue-600" size={32} />
+                </div>
+                <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-3">{item.number}</div>
+                <p className="text-slate-600">{item.text}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Bonuses Section */}
+      <section className="container mx-auto px-4 py-12 md:py-16 bg-white/50">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-8 md:mb-12 text-slate-900">
+            Бонусы при покупке курса
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            {[
+              {
+                icon: "Gift",
+                title: "Библиотека готовых объектов",
+                description: "Более 500 готовых 3D-моделей мебели, техники и декора для ваших проектов",
+                badge: "Бонус 1"
+              },
+              {
+                icon: "FileText",
+                title: "Шаблоны документации",
+                description: "Готовые шаблоны чертежей и спецификаций по ГОСТу",
+                badge: "Бонус 2"
+              },
+              {
+                icon: "PlayCircle",
+                title: "Мастер-класс по визуализации",
+                description: "Дополнительный урок: как создавать фотореалистичные рендеры в Archicad",
+                badge: "Бонус 3"
+              },
+              {
+                icon: "BookOpen",
+                title: "Чек-лист профессионала",
+                description: "PDF-руководство с горячими клавишами и лайфхаками работы в Archicad",
+                badge: "Бонус 4"
+              }
+            ].map((item, index) => (
+              <Card key={index} className="p-6 hover:shadow-lg transition-shadow animate-fade-in-up" style={{ animationDelay: `${index * 0.1}s` }}>
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Icon name={item.icon} className="text-green-600" size={24} />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 mb-2">
+                      <h3 className="text-xl font-semibold text-slate-900">{item.title}</h3>
+                      <span className="px-2 py-1 bg-green-100 text-green-700 text-xs font-medium rounded">{item.badge}</span>
+                    </div>
+                    <p className="text-slate-600">{item.description}</p>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Guarantee Section */}
+      <section className="container mx-auto px-4 py-12 md:py-16">
+        <div className="max-w-4xl mx-auto">
+          <Card className="p-8 md:p-12 bg-gradient-to-br from-green-50 to-blue-50 border-2 border-green-200">
+            <div className="flex flex-col md:flex-row items-center gap-8">
+              <div className="flex-shrink-0">
+                <div className="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center">
+                  <Icon name="ShieldCheck" className="text-green-600" size={48} />
+                </div>
+              </div>
+              <div className="flex-1 text-center md:text-left">
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 text-slate-900">
+                  Гарантия возврата денег
+                </h2>
+                <p className="text-lg text-slate-700 leading-relaxed mb-4">
+                  Если в течение <span className="font-bold text-green-600">первых 7 дней</span> вы поймёте, что курс вам не подходит — мы вернём вам 100% стоимости. Без вопросов и сложных процедур.
+                </p>
+                <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+                  <div className="flex items-center gap-2 text-slate-600">
+                    <Icon name="CheckCircle2" className="text-green-600" size={20} />
+                    <span>7 дней на возврат</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-slate-600">
+                    <Icon name="CheckCircle2" className="text-green-600" size={20} />
+                    <span>100% гарантия</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-slate-600">
+                    <Icon name="CheckCircle2" className="text-green-600" size={20} />
+                    <span>Нулевой риск</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Card>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="container mx-auto px-4 py-12 md:py-16 bg-white/50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-8 md:mb-12 text-slate-900">
+            Частые вопросы
+          </h2>
+          <div className="space-y-4">
+            {[
+              {
+                question: "Нужны ли специальные знания для прохождения курса?",
+                answer: "Нет, курс разработан для новичков. Мы начинаем с самых основ: установки программы и знакомства с интерфейсом."
+              },
+              {
+                question: "Какая версия Archicad нужна для обучения?",
+                answer: "Курс подходит для Archicad версий 22-27. Мы покажем, где скачать пробную версию бесплатно на 30 дней."
+              },
+              {
+                question: "Сколько времени нужно уделять обучению?",
+                answer: "Рекомендуем заниматься 3-4 часа в неделю. Вы можете учиться в удобном темпе — доступ к курсу навсегда."
+              },
+              {
+                question: "Выдаётся ли сертификат после обучения?",
+                answer: "Да, после успешного прохождения курса и выполнения финального проекта вы получите сертификат о прохождении обучения."
+              },
+              {
+                question: "Можно ли задавать вопросы во время обучения?",
+                answer: "Конечно! У вас будет доступ к куратору, который ответит на все ваши вопросы и поможет разобраться в сложных моментах."
+              },
+              {
+                question: "Что если мне не понравится курс?",
+                answer: "У вас есть 7 дней с момента покупки, чтобы вернуть деньги, если курс вам не подойдёт. Мы вернём 100% стоимости."
+              }
+            ].map((item, index) => (
+              <Card key={index} className="p-6 hover:shadow-md transition-shadow animate-fade-in" style={{ animationDelay: `${index * 0.05}s` }}>
+                <h3 className="text-lg font-semibold mb-3 text-slate-900 flex items-start gap-3">
+                  <Icon name="HelpCircle" className="text-blue-600 flex-shrink-0 mt-0.5" size={20} />
+                  {item.question}
+                </h3>
+                <p className="text-slate-600 pl-8">{item.answer}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Urgency Section */}
+      <section className="container mx-auto px-4 py-12 md:py-16">
+        <div className="max-w-4xl mx-auto">
+          <Card className="p-8 md:p-12 bg-gradient-to-br from-orange-50 to-red-50 border-2 border-orange-200">
+            <div className="text-center">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 rounded-full text-orange-700 font-semibold mb-6">
+                <Icon name="Clock" size={20} />
+                Ограниченное предложение
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-slate-900">
+                Специальная цена действует только сейчас
+              </h2>
+              <p className="text-lg text-slate-700 mb-6">
+                Мы регулярно повышаем цену курса по мере добавления новых материалов. Зафиксируйте текущую стоимость и получите доступ ко всем будущим обновлениям бесплатно.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <div className="text-center">
+                  <div className="text-sm text-slate-500 line-through mb-1">Обычная цена: 19 900 ₽</div>
+                  <div className="text-3xl font-bold text-orange-600">Сейчас: 12 900 ₽</div>
+                </div>
+                <div className="text-2xl font-bold text-slate-400">→</div>
+                <div className="px-6 py-3 bg-orange-600 text-white rounded-lg font-bold text-xl">
+                  Экономия 7 000 ₽
+                </div>
+              </div>
+            </div>
+          </Card>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="relative overflow-hidden py-20">
         <div 
