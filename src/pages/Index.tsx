@@ -216,32 +216,42 @@ const Index = () => {
                 name: "Анна Смирнова",
                 role: "Дизайнер интерьеров",
                 text: "Курс превзошёл все ожидания! За месяц освоила Archicad и уже работаю над реальными проектами. Ирина объясняет сложные вещи простым языком.",
-                rating: 5
+                rating: 5,
+                avatar: "https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/431e87e7-191d-4b1b-89fe-eccb6ad0356a.jpg"
               },
               {
                 name: "Дмитрий Волков",
                 role: "Студент архитектурного факультета",
                 text: "Отличная структура курса и практические задания. Теперь могу создавать профессиональные чертежи и 3D-модели для учёбы и фриланса.",
-                rating: 5
+                rating: 5,
+                avatar: "https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/d9123350-1f5d-40ff-a4fe-845560d5251d.jpg"
               },
               {
                 name: "Екатерина Новикова",
                 role: "Начинающий архитектор",
                 text: "Очень довольна! Получила все необходимые навыки для работы в архитектурном бюро. Поддержка куратора помогла разобраться во всех нюансах.",
-                rating: 5
+                rating: 5,
+                avatar: "https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/738e6f01-1ad7-4c2c-b854-66e46bc44ac8.jpg"
               }
             ].map((review, index) => (
               <Card key={index} className="p-6 hover:shadow-lg transition-shadow animate-fade-in-up" style={{ animationDelay: `${index * 0.1}s` }}>
-                <div className="flex gap-1 mb-4">
+                <div className="flex items-center gap-4 mb-4">
+                  <img 
+                    src={review.avatar} 
+                    alt={review.name}
+                    className="w-16 h-16 rounded-full object-cover"
+                  />
+                  <div>
+                    <p className="font-semibold text-slate-900">{review.name}</p>
+                    <p className="text-sm text-slate-500">{review.role}</p>
+                  </div>
+                </div>
+                <div className="flex gap-1 mb-3">
                   {[...Array(review.rating)].map((_, i) => (
-                    <Icon key={i} name="Star" className="text-yellow-500 fill-yellow-500" size={20} />
+                    <Icon key={i} name="Star" className="text-yellow-500 fill-yellow-500" size={18} />
                   ))}
                 </div>
-                <p className="text-slate-700 mb-4 leading-relaxed">"{review.text}"</p>
-                <div className="border-t pt-4">
-                  <p className="font-semibold text-slate-900">{review.name}</p>
-                  <p className="text-sm text-slate-500">{review.role}</p>
-                </div>
+                <p className="text-slate-700 leading-relaxed">"{review.text}"</p>
               </Card>
             ))}
           </div>
@@ -249,10 +259,17 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="container mx-auto px-4 py-20">
-        <div className="max-w-3xl mx-auto text-center">
-          <Card className="p-8 md:p-12 bg-gradient-to-br from-blue-600 to-blue-700 text-white shadow-xl">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+      <section className="relative overflow-hidden py-20">
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: 'url(https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/8c444f19-5037-4c77-99c1-8c00cb2eea47.jpg)'
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/95 to-slate-900/95" />
+        <div className="relative container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
               Начните карьеру в архитектуре и дизайне
             </h2>
             <p className="text-lg mb-8 text-blue-50">
@@ -260,7 +277,7 @@ const Index = () => {
             </p>
             <Button 
               size="lg" 
-              className="text-lg px-8 py-6 bg-white text-blue-600 hover:bg-blue-50"
+              className="text-lg px-8 py-6 bg-white text-blue-600 hover:bg-blue-50 shadow-xl"
               onClick={handleCTAClick}
             >
               Записаться на курс
@@ -269,7 +286,7 @@ const Index = () => {
             <p className="text-sm mt-6 text-blue-100">
               Оплата безопасна • Гарантия возврата денег
             </p>
-          </Card>
+          </div>
         </div>
       </section>
 
