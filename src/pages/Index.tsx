@@ -191,29 +191,38 @@ const Index = () => {
       </section>
 
       {/* Program Section */}
-      <section className="container mx-auto px-4 py-12 md:py-16">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-8 md:mb-12 text-slate-900">
-            Программа курса
-          </h2>
-          <div className="space-y-4">
-            {[
-              "Знакомство с интерфейсом и основными инструментами Archicad",
-              "Создание и редактирование стен, перекрытий, крыш",
-              "Работа с окнами, дверями и другими объектами",
-              "3D-моделирование и визуализация проектов",
-              "Создание чертежей и разрезов",
-              "Оформление проектной документации",
-              "Работа со слоями и библиотеками объектов",
-              "Финальный проект: создание полноценного архитектурного проекта"
-            ].map((item, index) => (
-              <Card key={index} className="p-4 flex items-start gap-4 hover:shadow-md transition-shadow animate-fade-in" style={{ animationDelay: `${index * 0.05}s` }}>
-                <div className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center flex-shrink-0 font-semibold">
-                  {index + 1}
-                </div>
-                <p className="text-slate-700 pt-1">{item}</p>
-              </Card>
-            ))}
+      <section className="relative overflow-hidden py-12 md:py-16">
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: 'url(https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/bb7c8b93-585a-45c9-b226-6819051dc45e.jpg)'
+          }}
+        />
+        <div className="absolute inset-0 bg-white/85" />
+        <div className="relative container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-8 md:mb-12 text-slate-900">
+              Программа курса
+            </h2>
+            <div className="space-y-4">
+              {[
+                "Знакомство с интерфейсом и основными инструментами Archicad",
+                "Создание и редактирование стен, перекрытий, крыш",
+                "Работа с окнами, дверями и другими объектами",
+                "3D-моделирование и визуализация проектов",
+                "Создание чертежей и разрезов",
+                "Оформление проектной документации",
+                "Работа со слоями и библиотеками объектов",
+                "Финальный проект: создание полноценного архитектурного проекта"
+              ].map((item, index) => (
+                <Card key={index} className="p-4 flex items-start gap-4 hover:shadow-md transition-shadow animate-fade-in bg-white/90 backdrop-blur-sm" style={{ animationDelay: `${index * 0.05}s` }}>
+                  <div className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center flex-shrink-0 font-semibold">
+                    {index + 1}
+                  </div>
+                  <p className="text-slate-700 pt-1">{item}</p>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>
