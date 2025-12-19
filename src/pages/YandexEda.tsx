@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Icon from "@/components/ui/icon";
 
-const Index = () => {
+const YandexEda = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-orange-50 to-red-50">
       {/* Hero Section */}
@@ -111,4 +111,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default YandexEda;
