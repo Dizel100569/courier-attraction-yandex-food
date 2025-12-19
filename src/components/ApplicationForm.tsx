@@ -51,11 +51,11 @@ export default function ApplicationForm() {
   };
 
   return (
-    <section id="application-form" className="mb-24">
+    <section id="application-form" className="mb-16 md:mb-24">
       <Card className="max-w-2xl mx-auto border shadow-lg">
         <CardHeader className="text-center bg-muted/30">
-          <CardTitle className="text-3xl font-bold mb-2">Форма заявки на трудоустройство</CardTitle>
-          <CardDescription className="text-base">Заполните данные и мы свяжемся с вами в течение 24 часов</CardDescription>
+          <CardTitle className="text-2xl md:text-3xl font-bold mb-2">Форма заявки на трудоустройство</CardTitle>
+          <CardDescription className="text-sm md:text-base">Заполните данные и мы свяжемся с вами в течение 24 часов</CardDescription>
         </CardHeader>
         <CardContent className="pt-8">
           {submitted ? (
@@ -108,7 +108,7 @@ export default function ApplicationForm() {
               <Button
                 type="submit"
                 size="lg"
-                className="w-full py-6 font-semibold"
+                className="w-full py-5 md:py-6 font-semibold text-base"
               >
                 Отправить заявку
                 <Icon name="ArrowRight" className="ml-2" size={18} />

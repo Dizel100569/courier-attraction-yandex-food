@@ -22,37 +22,37 @@ export default function Index() {
           filter: 'contrast(1.2) saturate(1.3) brightness(1.1)'
         }}>
           <div className="absolute inset-0 bg-gradient-to-r from-foreground/75 via-foreground/65 to-transparent"></div>
-          <div className="relative z-10 grid lg:grid-cols-2 gap-16 items-center py-16 px-8">
+          <div className="relative z-10 grid lg:grid-cols-2 gap-8 md:gap-16 items-center py-8 md:py-16 px-4 md:px-8">
             <div className="space-y-8">
               <div className="inline-block">
                 <Badge variant="outline" className="text-sm px-4 py-2 border-foreground text-foreground font-semibold bg-background/95">
                   Официальное трудоустройство
                 </Badge>
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold leading-tight text-background">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-background">
                 Работа курьером в Яндекс Еда
               </h2>
-              <p className="text-lg text-background/90 leading-relaxed">
+              <p className="text-base md:text-lg text-background/90 leading-relaxed">
                 Официальное трудоустройство с полным социальным пакетом. Стабильный доход от 120 000₽ до 275 000₽ в месяц, свободный график работы и выплаты два раза в неделю.
               </p>
-              <div className="grid grid-cols-3 gap-4 py-4">
-                <div className="text-center p-4 bg-background/95 backdrop-blur-md rounded-lg shadow-lg">
-                  <div className="text-3xl font-bold text-primary">275К₽</div>
-                  <div className="text-sm text-foreground mt-1">Максимальный доход</div>
+              <div className="grid grid-cols-3 gap-2 md:gap-4 py-4">
+                <div className="text-center p-2 md:p-4 bg-background/95 backdrop-blur-md rounded-lg shadow-lg">
+                  <div className="text-xl md:text-3xl font-bold text-primary">275К₽</div>
+                  <div className="text-xs md:text-sm text-foreground mt-1">Макс. доход</div>
                 </div>
-                <div className="text-center p-4 bg-background/95 backdrop-blur-md rounded-lg shadow-lg">
-                  <div className="text-3xl font-bold text-primary">2х</div>
-                  <div className="text-sm text-foreground mt-1">Выплаты в неделю</div>
+                <div className="text-center p-2 md:p-4 bg-background/95 backdrop-blur-md rounded-lg shadow-lg">
+                  <div className="text-xl md:text-3xl font-bold text-primary">2х</div>
+                  <div className="text-xs md:text-sm text-foreground mt-1">Выплаты</div>
                 </div>
-                <div className="text-center p-4 bg-background/95 backdrop-blur-md rounded-lg shadow-lg">
-                  <div className="text-3xl font-bold text-primary">24/7</div>
-                  <div className="text-sm text-foreground mt-1">Поддержка</div>
+                <div className="text-center p-2 md:p-4 bg-background/95 backdrop-blur-md rounded-lg shadow-lg">
+                  <div className="text-xl md:text-3xl font-bold text-primary">24/7</div>
+                  <div className="text-xs md:text-sm text-foreground mt-1">Поддержка</div>
                 </div>
               </div>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3 md:gap-4">
                 <Button 
                   size="lg" 
-                  className="px-8 py-6 text-foreground"
+                  className="w-full sm:w-auto px-6 md:px-8 py-5 md:py-6 text-foreground"
                   asChild
                 >
                   <a href="#application-form" onClick={() => {
@@ -67,7 +67,7 @@ export default function Index() {
                 <Button 
                   size="lg" 
                   variant="outline" 
-                  className="px-8 py-6"
+                  className="w-full sm:w-auto px-6 md:px-8 py-5 md:py-6"
                   onClick={() => {
                     document.getElementById('benefits')?.scrollIntoView({ 
                       behavior: 'smooth',
@@ -84,12 +84,12 @@ export default function Index() {
           </div>
         </section>
 
-        <section id="benefits" className="mb-24 bg-[#FFD700] py-16 -mx-4 px-4">
+        <section id="benefits" className="mb-16 md:mb-24 bg-[#FFD700] py-8 md:py-16 -mx-4 px-4">
           <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
+            <div className="grid lg:grid-cols-2 gap-6 md:gap-12 items-center mb-8 md:mb-12">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Преимущества работы курьером</h2>
-                <p className="text-lg text-muted-foreground">Комфортные условия и стабильный доход</p>
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4 text-foreground">Преимущества работы курьером</h2>
+                <p className="text-base md:text-lg text-muted-foreground">Комфортные условия и стабильный доход</p>
               </div>
               <div className="rounded-2xl overflow-hidden shadow-lg">
                 <img 
@@ -122,10 +122,10 @@ export default function Index() {
           </div>
         </section>
         
-        <section className="mb-24">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Как начать работать</h2>
-            <p className="text-lg text-muted-foreground">Простой процесс трудоустройства за 3 шага</p>
+        <section className="mb-16 md:mb-24">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4 text-foreground">Как начать работать</h2>
+            <p className="text-base md:text-lg text-muted-foreground">Простой процесс трудоустройства за 3 шага</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -149,11 +149,11 @@ export default function Index() {
 
         <IncomeCalculator />
 
-        <section id="reviews" className="mb-24 bg-[#FFD700] py-16 -mx-4 px-4">
+        <section id="reviews" className="mb-16 md:mb-24 bg-[#FFD700] py-8 md:py-16 -mx-4 px-4">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Отзывы курьеров</h2>
-              <p className="text-lg text-muted-foreground">Реальный опыт работы от наших сотрудников</p>
+            <div className="text-center mb-8 md:mb-12">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4 text-foreground">Отзывы курьеров</h2>
+              <p className="text-base md:text-lg text-muted-foreground">Реальный опыт работы от наших сотрудников</p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
@@ -208,10 +208,10 @@ export default function Index() {
           filter: 'contrast(1.2) saturate(1.3) brightness(1.1)'
         }}>
           <div className="absolute inset-0 bg-gradient-to-r from-foreground/70 via-foreground/60 to-foreground/70"></div>
-          <div className="relative z-10 py-32 px-8 text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-background">Присоединяйся к команде</h2>
-            <p className="text-xl text-background/90 mb-8 max-w-2xl mx-auto">Тысячи курьеров уже работают с нами и зарабатывают на своих условиях</p>
-            <Button size="lg" className="px-12 py-6 text-lg text-foreground" asChild>
+          <div className="relative z-10 py-16 md:py-32 px-4 md:px-8 text-center">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 text-background">Присоединяйся к команде</h2>
+            <p className="text-base md:text-xl text-background/90 mb-6 md:mb-8 max-w-2xl mx-auto">Тысячи курьеров уже работают с нами и зарабатывают на своих условиях</p>
+            <Button size="lg" className="w-full sm:w-auto px-8 md:px-12 py-5 md:py-6 text-base md:text-lg text-foreground" asChild>
               <a href="#application-form" onClick={() => {
                 if (typeof window !== 'undefined' && (window as any).ym) {
                   (window as any).ym(105912288, 'reachGoal', 'click_apply_button');
@@ -224,10 +224,10 @@ export default function Index() {
           </div>
         </section>
 
-        <section id="faq" className="mb-24 bg-[#FFD700] py-16 -mx-4 px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Часто задаваемые вопросы</h2>
-            <p className="text-lg text-muted-foreground">Ответы на популярные вопросы о работе курьером</p>
+        <section id="faq" className="mb-16 md:mb-24 bg-[#FFD700] py-8 md:py-16 -mx-4 px-4">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4 text-foreground">Часто задаваемые вопросы</h2>
+            <p className="text-base md:text-lg text-muted-foreground">Ответы на популярные вопросы о работе курьером</p>
           </div>
           <Accordion type="single" collapsible className="max-w-3xl mx-auto space-y-3">
             {[
