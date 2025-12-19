@@ -490,36 +490,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Urgency Section */}
-      <section className="container mx-auto px-4 py-12 md:py-16">
-        <div className="max-w-4xl mx-auto">
-          <Card className="p-8 md:p-12 bg-gradient-to-br from-orange-50 to-red-50 border-2 border-orange-200">
-            <div className="text-center">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 rounded-full text-orange-700 font-semibold mb-6">
-                <Icon name="Clock" size={20} />
-                Ограниченное предложение
-              </div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-slate-900">
-                Специальная цена действует только сейчас
-              </h2>
-              <p className="text-lg text-slate-700 mb-6">
-                Мы регулярно повышаем цену курса по мере добавления новых материалов. Зафиксируйте текущую стоимость и получите доступ ко всем будущим обновлениям бесплатно.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <div className="text-center">
-                  <div className="text-sm text-slate-500 line-through mb-1">Обычная цена: 19 900 ₽</div>
-                  <div className="text-3xl font-bold text-orange-600">Сейчас: 12 900 ₽</div>
-                </div>
-                <div className="text-2xl font-bold text-slate-400">→</div>
-                <div className="px-6 py-3 bg-orange-600 text-white rounded-lg font-bold text-xl">
-                  Экономия 7 000 ₽
-                </div>
-              </div>
-            </div>
-          </Card>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="relative overflow-hidden py-20">
         <div 
