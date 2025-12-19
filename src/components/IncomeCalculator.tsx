@@ -120,25 +120,25 @@ export default function IncomeCalculator() {
                 <span>12 часов</span>
               </div>
             </div>
-            <div className="bg-background rounded-lg p-4 md:p-8 border-2 border-primary">
-              <div className="text-center space-y-1 md:space-y-2">
-                <p className="text-muted-foreground text-sm md:text-base">Ваш ежемесячный доход:</p>
-                <p className="text-3xl md:text-5xl font-bold text-primary">{calculateIncome().toLocaleString('ru-RU')} ₽</p>
-                <p className="text-xs md:text-sm text-muted-foreground">≈ {Math.round(calculateIncome() / 22).toLocaleString('ru-RU')} ₽ в день</p>
+            <div className="bg-background rounded-lg p-6 md:p-8 border-2 border-primary shadow-lg">
+              <div className="text-center space-y-2 md:space-y-3">
+                <p className="text-foreground/80 text-base md:text-lg font-semibold">Ваш ежемесячный доход:</p>
+                <p className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-primary drop-shadow-sm">{calculateIncome().toLocaleString('ru-RU')} ₽</p>
+                <p className="text-sm md:text-base text-foreground/70 font-medium">≈ {Math.round(calculateIncome() / 22).toLocaleString('ru-RU')} ₽ в день</p>
               </div>
             </div>
-            <div className="grid grid-cols-3 gap-2 md:gap-4 text-center">
-              <div className="bg-card rounded-xl md:rounded-2xl p-2 md:p-4">
-                <p className="text-xs md:text-sm text-muted-foreground mb-1">Заказов в час</p>
-                <p className="text-xl md:text-3xl font-bold">~{courierType === 'walking' ? '2' : courierType === 'bike' ? '3' : '4'}</p>
+            <div className="grid grid-cols-3 gap-3 md:gap-4 text-center">
+              <div className="bg-background rounded-xl md:rounded-2xl p-3 md:p-4 border shadow-sm">
+                <p className="text-xs md:text-sm text-foreground/70 mb-1.5 font-medium">Заказов в час</p>
+                <p className="text-2xl md:text-3xl font-extrabold text-foreground">~{courierType === 'walking' ? '2' : courierType === 'bike' ? '3' : '4'}</p>
               </div>
-              <div className="bg-card rounded-xl md:rounded-2xl p-2 md:p-4">
-                <p className="text-xs md:text-sm text-muted-foreground mb-1">За заказ</p>
-                <p className="text-xl md:text-3xl font-bold">~{courierType === 'walking' ? '400' : courierType === 'bike' ? '550' : '700'}₽</p>
+              <div className="bg-background rounded-xl md:rounded-2xl p-3 md:p-4 border shadow-sm">
+                <p className="text-xs md:text-sm text-foreground/70 mb-1.5 font-medium">За заказ</p>
+                <p className="text-2xl md:text-3xl font-extrabold text-foreground">~{courierType === 'walking' ? '400' : courierType === 'bike' ? '550' : '700'}₽</p>
               </div>
-              <div className="bg-card rounded-xl md:rounded-2xl p-2 md:p-4">
-                <p className="text-xs md:text-sm text-muted-foreground mb-1">Рабочих дней</p>
-                <p className="text-xl md:text-3xl font-bold">22</p>
+              <div className="bg-background rounded-xl md:rounded-2xl p-3 md:p-4 border shadow-sm">
+                <p className="text-xs md:text-sm text-foreground/70 mb-1.5 font-medium">Рабочих дней</p>
+                <p className="text-2xl md:text-3xl font-extrabold text-foreground">22</p>
               </div>
             </div>
           </CardContent>
