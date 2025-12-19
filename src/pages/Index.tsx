@@ -23,24 +23,24 @@ const Index = () => {
             <div className="inline-block px-4 py-2 bg-blue-500/90 rounded-full text-white text-sm font-medium mb-4">
               Онлайн-обучение • Сертификат о прохождении
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight px-2">
               Archicad для дизайнеров и архитекторов
             </h1>
-            <p className="text-xl md:text-2xl text-blue-50 max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl lg:text-2xl text-blue-50 max-w-3xl mx-auto px-2">
               Освойте профессиональное 3D-моделирование и проектирование с нуля. Базовый курс для старта карьеры.
             </p>
-            <div className="grid grid-cols-3 gap-4 max-w-2xl mx-auto mb-8">
+            <div className="grid grid-cols-3 gap-2 md:gap-4 max-w-2xl mx-auto mb-8">
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-white mb-1">2500+</div>
-                <div className="text-sm text-blue-100">Учеников</div>
+                <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-1">2500+</div>
+                <div className="text-xs md:text-sm text-blue-100">Учеников</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-white mb-1">8 недель</div>
-                <div className="text-sm text-blue-100">Длительность</div>
+                <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-1">8 недель</div>
+                <div className="text-xs md:text-sm text-blue-100">Обучение</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-white mb-1">4.9/5</div>
-                <div className="text-sm text-blue-100">Рейтинг курса</div>
+                <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-1">4.9/5</div>
+                <div className="text-xs md:text-sm text-blue-100">Рейтинг</div>
               </div>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-2">
@@ -61,9 +61,9 @@ const Index = () => {
       </section>
 
       {/* For Whom Section */}
-      <section className="container mx-auto px-4 py-16">
+      <section className="container mx-auto px-4 py-12 md:py-16">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-900">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-8 md:mb-12 text-slate-900">
             Для кого этот курс
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
@@ -97,9 +97,9 @@ const Index = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="container mx-auto px-4 py-16 bg-white/50">
+      <section className="container mx-auto px-4 py-12 md:py-16 bg-white/50">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-900">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-8 md:mb-12 text-slate-900">
             Что вы получите
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
@@ -150,9 +150,9 @@ const Index = () => {
       </section>
 
       {/* Author Section */}
-      <section className="container mx-auto px-4 py-16 bg-white/50">
+      <section className="container mx-auto px-4 py-12 md:py-16 bg-white/50">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-900">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-8 md:mb-12 text-slate-900">
             Автор курса
           </h2>
           <Card className="p-8 md:p-12">
@@ -191,9 +191,9 @@ const Index = () => {
       </section>
 
       {/* Program Section */}
-      <section className="container mx-auto px-4 py-16">
+      <section className="container mx-auto px-4 py-12 md:py-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-900">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-8 md:mb-12 text-slate-900">
             Программа курса
           </h2>
           <div className="space-y-4">
@@ -219,56 +219,57 @@ const Index = () => {
       </section>
 
       {/* Pricing Section */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-900">
+      <section className="container mx-auto px-4 py-12 md:py-16">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-8 md:mb-12 text-slate-900">
             Стоимость курса
           </h2>
-          <Card className="p-8 md:p-12 text-center shadow-xl border-2 border-blue-200">
-            <div className="mb-6">
-              <div className="text-5xl md:text-6xl font-bold text-blue-600 mb-2">12 900 ₽</div>
-              <div className="text-slate-600 text-lg">Полный доступ к курсу навсегда</div>
-            </div>
-            
-            <div className="bg-blue-50 rounded-xl p-6 mb-6">
-              <div className="flex items-center justify-center gap-2 mb-3">
-                <Icon name="CreditCard" className="text-blue-600" size={24} />
-                <span className="text-lg font-semibold text-slate-900">Оплата Долями</span>
-              </div>
-              <div className="text-2xl font-bold text-blue-600 mb-1">от 3 225 ₽ × 4 платежа</div>
-              <div className="text-slate-600">Доступна рассрочка без процентов</div>
-            </div>
-
-            <div className="space-y-3 text-left mb-8">
-              {[
-                "Оплата производится на защищённом сайте",
-                "После оплаты мгновенный доступ к материалам",
-                "Можете сразу приступить к изучению",
-                "Поддержка куратора на всём курсе"
-              ].map((item, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <Icon name="CheckCircle2" className="text-green-600 flex-shrink-0 mt-0.5" size={20} />
-                  <span className="text-slate-700">{item}</span>
+          <Card className="p-6 md:p-8 shadow-xl border-2 border-blue-200">
+            <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
+              <div className="text-center md:text-left">
+                <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-blue-600 mb-2">12 900 ₽</div>
+                <div className="text-slate-600 text-base md:text-lg mb-4 md:mb-6">Полный доступ к курсу навсегда</div>
+                
+                <div className="bg-blue-50 rounded-lg p-4">
+                  <div className="flex items-center justify-center md:justify-start gap-2 mb-2">
+                    <Icon name="CreditCard" className="text-blue-600" size={20} />
+                    <span className="text-base font-semibold text-slate-900">Оплата Долями</span>
+                  </div>
+                  <div className="text-xl md:text-2xl font-bold text-blue-600 mb-1">от 3 225 ₽ × 4</div>
+                  <div className="text-sm text-slate-600">Рассрочка без процентов</div>
                 </div>
-              ))}
-            </div>
+              </div>
 
-            <Button 
-              size="lg" 
-              className="w-full text-lg py-6 bg-blue-600 hover:bg-blue-700"
-              onClick={handleCTAClick}
-            >
-              Записаться на курс
-              <Icon name="ArrowRight" className="ml-2" size={20} />
-            </Button>
+              <div className="space-y-2">
+                {[
+                  "Защищённая оплата на сайте",
+                  "Мгновенный доступ после оплаты",
+                  "Можете сразу начать обучение",
+                  "Поддержка куратора включена"
+                ].map((item, index) => (
+                  <div key={index} className="flex items-start gap-2">
+                    <Icon name="CheckCircle2" className="text-green-600 flex-shrink-0 mt-0.5" size={18} />
+                    <span className="text-sm md:text-base text-slate-700">{item}</span>
+                  </div>
+                ))}
+                <Button 
+                  size="lg" 
+                  className="w-full mt-4 text-base md:text-lg py-5 md:py-6 bg-blue-600 hover:bg-blue-700"
+                  onClick={handleCTAClick}
+                >
+                  Записаться на курс
+                  <Icon name="ArrowRight" className="ml-2" size={18} />
+                </Button>
+              </div>
+            </div>
           </Card>
         </div>
       </section>
 
       {/* Testimonials Section */}
-      <section className="container mx-auto px-4 py-16 bg-white/50">
+      <section className="container mx-auto px-4 py-12 md:py-16 bg-white/50">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-900">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-8 md:mb-12 text-slate-900">
             Отзывы учеников
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
