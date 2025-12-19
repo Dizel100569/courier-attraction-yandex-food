@@ -8,13 +8,23 @@ export default function Header() {
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-6">
           <Link to="/yandex-eda" className="flex items-center gap-3 hover:opacity-80 transition">
-          <div className="w-14 h-14 bg-primary rounded-lg flex items-center justify-center">
-            <Icon name="Bike" className="text-primary-foreground" size={32} />
-          </div>
-          <div>
-            <h1 className="text-2xl font-bold text-foreground">Яндекс Еда</h1>
-            <p className="text-sm text-muted-foreground">Официальное трудоустройство</p>
-          </div>
+            <div className="w-14 h-14 bg-primary rounded-lg flex items-center justify-center">
+              <Icon name="Bike" className="text-primary-foreground" size={32} />
+            </div>
+            <div>
+              <h1 className="text-2xl font-bold text-foreground">Яндекс Еда</h1>
+              <p className="text-sm text-muted-foreground">Официальное трудоустройство</p>
+            </div>
+          </Link>
+          <Link to="/archicad" className="flex items-center gap-3 hover:opacity-80 transition">
+            <div className="w-14 h-14 bg-blue-600 rounded-lg flex items-center justify-center">
+              <Icon name="Building2" className="text-white" size={32} />
+            </div>
+            <div>
+              <h1 className="text-2xl font-bold text-foreground">ARCHICAD</h1>
+              <p className="text-sm text-muted-foreground">BIM-решение</p>
+            </div>
+          </Link>
         </div>
         <nav className="hidden lg:flex items-center gap-8">
           <a href="#benefits" className="text-sm font-medium hover:text-primary transition-colors">Преимущества</a>
