@@ -5,7 +5,7 @@ const SocialProof = () => {
   return (
     <>
       {/* Testimonials Section */}
-      <section className="container mx-auto px-4 py-12 md:py-16 bg-white/50">
+      <section id="reviews" className="container mx-auto px-4 py-12 md:py-16 bg-white/50 scroll-mt-16">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-8 md:mb-12 text-slate-900">
             Отзывы учеников
@@ -95,7 +95,7 @@ const SocialProof = () => {
       </section>
 
       {/* Bonuses Section */}
-      <section className="container mx-auto px-4 py-12 md:py-16 bg-white/50">
+      <section id="bonuses" className="container mx-auto px-4 py-12 md:py-16 bg-white/50 scroll-mt-16">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-8 md:mb-12 text-slate-900">
             Бонусы при покупке курса
@@ -147,7 +147,7 @@ const SocialProof = () => {
       </section>
 
       {/* Guarantee Section */}
-      <section className="container mx-auto px-4 py-12 md:py-16">
+      <section id="guarantee" className="container mx-auto px-4 py-12 md:py-16 scroll-mt-16">
         <div className="max-w-4xl mx-auto">
           <Card className="p-8 md:p-12 bg-gradient-to-br from-green-50 to-blue-50 border-2 border-green-200">
             <div className="flex flex-col md:flex-row items-center gap-8">

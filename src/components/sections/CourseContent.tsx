@@ -51,7 +51,7 @@ const CourseContent = ({ onCTAClick }: CourseContentProps) => {
       </section>
 
       {/* Program Section */}
-      <section className="relative overflow-hidden py-12 md:py-16">
+      <section id="program" className="relative overflow-hidden py-12 md:py-16 scroll-mt-16">
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
