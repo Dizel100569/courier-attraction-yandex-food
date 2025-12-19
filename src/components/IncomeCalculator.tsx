@@ -54,10 +54,10 @@ export default function IncomeCalculator() {
                     alt="Пеший курьер"
                     className="w-full h-[120px] md:h-[200px] object-cover"
                   />
-                  <div className={`p-2 md:p-3 text-center font-semibold ${courierType === 'walking' ? 'bg-primary text-primary-foreground' : 'bg-muted'}`}>
-                    <Icon name="PersonStanding" size={20} className="mx-auto mb-1 md:hidden" />
+                  <div className={`p-1.5 md:p-3 text-center font-semibold ${courierType === 'walking' ? 'bg-primary text-primary-foreground' : 'bg-muted'}`}>
+                    <Icon name="PersonStanding" size={18} className="mx-auto mb-0.5 md:hidden" />
                     <Icon name="PersonStanding" size={24} className="mx-auto mb-1 hidden md:block" />
-                    <div className="text-xs md:text-sm">Пеший</div>
+                    <div className="text-[10px] leading-tight md:text-sm">Пеший</div>
                   </div>
                 </div>
                 <div 
@@ -74,10 +74,10 @@ export default function IncomeCalculator() {
                     alt="Велокурьер"
                     className="w-full h-[120px] md:h-[200px] object-cover"
                   />
-                  <div className={`p-2 md:p-3 text-center font-semibold ${courierType === 'bike' ? 'bg-primary text-primary-foreground' : 'bg-muted'}`}>
-                    <Icon name="Bike" size={20} className="mx-auto mb-1 md:hidden" />
+                  <div className={`p-1.5 md:p-3 text-center font-semibold ${courierType === 'bike' ? 'bg-primary text-primary-foreground' : 'bg-muted'}`}>
+                    <Icon name="Bike" size={18} className="mx-auto mb-0.5 md:hidden" />
                     <Icon name="Bike" size={24} className="mx-auto mb-1 hidden md:block" />
-                    <div className="text-xs md:text-sm">Велокурьер</div>
+                    <div className="text-[10px] leading-tight md:text-sm">Велокурьер</div>
                   </div>
                 </div>
                 <div 
@@ -94,10 +94,10 @@ export default function IncomeCalculator() {
                     alt="Автокурьер"
                     className="w-full h-[120px] md:h-[200px] object-cover"
                   />
-                  <div className={`p-2 md:p-3 text-center font-semibold ${courierType === 'car' ? 'bg-primary text-primary-foreground' : 'bg-muted'}`}>
-                    <Icon name="Car" size={20} className="mx-auto mb-1 md:hidden" />
+                  <div className={`p-1.5 md:p-3 text-center font-semibold ${courierType === 'car' ? 'bg-primary text-primary-foreground' : 'bg-muted'}`}>
+                    <Icon name="Car" size={18} className="mx-auto mb-0.5 md:hidden" />
                     <Icon name="Car" size={24} className="mx-auto mb-1 hidden md:block" />
-                    <div className="text-xs md:text-sm">Автокурьер</div>
+                    <div className="text-[10px] leading-tight md:text-sm">Автокурьер</div>
                   </div>
                 </div>
               </div>
