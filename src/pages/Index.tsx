@@ -5,6 +5,9 @@ import FAQSection from "@/components/sections/FAQSection";
 
 const Index = () => {
   const handleCTAClick = () => {
+    if (typeof window !== 'undefined' && (window as any).ym) {
+      (window as any).ym(105927786, 'reachGoal', 'click_enroll');
+    }
     window.open("https://ihclick.ru/?p=272195&o=272212&idp=314945&erid=2VtzqvHfAQk", "_blank");
   };
 
