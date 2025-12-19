@@ -17,8 +17,8 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Archicad />} />
-          <Route path="/yandex-eda" element={<YandexEda />} />
+          <Route path="/" element={<YandexEda />} />
+          <Route path="/archicad" element={<Archicad />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
