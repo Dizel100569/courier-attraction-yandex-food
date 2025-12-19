@@ -24,7 +24,7 @@ export default function Footer() {
               @yandex_eda_courier
             </a>
           </div>
-          <div className="flex justify-center gap-6 text-muted-foreground text-sm">
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-6 text-muted-foreground text-xs sm:text-sm">
             <a href="#" className="hover:text-primary transition-colors">О компании</a>
             <a href="#" className="hover:text-primary transition-colors">Вакансии</a>
             <a href="#" className="hover:text-primary transition-colors">Поддержка</a>

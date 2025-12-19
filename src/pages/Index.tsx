@@ -35,18 +35,18 @@ export default function Index() {
               <p className="text-base md:text-lg text-background/90 leading-relaxed">
                 Официальное трудоустройство с полным социальным пакетом. Стабильный доход от 120 000₽ до 275 000₽ в месяц, свободный график работы и выплаты два раза в неделю.
               </p>
-              <div className="grid grid-cols-3 gap-2 md:gap-4 py-4">
-                <div className="text-center p-2 md:p-4 bg-background/95 backdrop-blur-md rounded-lg shadow-lg">
-                  <div className="text-xl md:text-3xl font-bold text-primary">275К₽</div>
-                  <div className="text-xs md:text-sm text-foreground mt-1">Макс. доход</div>
+              <div className="grid grid-cols-3 gap-1.5 sm:gap-2 md:gap-4 py-4">
+                <div className="text-center p-1.5 sm:p-2 md:p-4 bg-background/95 backdrop-blur-md rounded-lg shadow-lg">
+                  <div className="text-base sm:text-xl md:text-3xl font-bold text-primary leading-tight">275К₽</div>
+                  <div className="text-[10px] sm:text-xs md:text-sm text-foreground mt-0.5 sm:mt-1 leading-tight">Макс. доход</div>
                 </div>
-                <div className="text-center p-2 md:p-4 bg-background/95 backdrop-blur-md rounded-lg shadow-lg">
-                  <div className="text-xl md:text-3xl font-bold text-primary">2х</div>
-                  <div className="text-xs md:text-sm text-foreground mt-1">Выплаты</div>
+                <div className="text-center p-1.5 sm:p-2 md:p-4 bg-background/95 backdrop-blur-md rounded-lg shadow-lg">
+                  <div className="text-base sm:text-xl md:text-3xl font-bold text-primary leading-tight">2х</div>
+                  <div className="text-[10px] sm:text-xs md:text-sm text-foreground mt-0.5 sm:mt-1 leading-tight">Выплаты</div>
                 </div>
-                <div className="text-center p-2 md:p-4 bg-background/95 backdrop-blur-md rounded-lg shadow-lg">
-                  <div className="text-xl md:text-3xl font-bold text-primary">24/7</div>
-                  <div className="text-xs md:text-sm text-foreground mt-1">Поддержка</div>
+                <div className="text-center p-1.5 sm:p-2 md:p-4 bg-background/95 backdrop-blur-md rounded-lg shadow-lg">
+                  <div className="text-base sm:text-xl md:text-3xl font-bold text-primary leading-tight">24/7</div>
+                  <div className="text-[10px] sm:text-xs md:text-sm text-foreground mt-0.5 sm:mt-1 leading-tight">Поддержка</div>
                 </div>
               </div>
               <div className="flex flex-col sm:flex-row flex-wrap gap-3 md:gap-4">
@@ -169,21 +169,21 @@ export default function Index() {
             ].map((review, idx) => (
               <Card key={idx} className="hover:shadow-lg transition-shadow">
                 <CardHeader>
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex gap-3">
+                  <div className="flex items-start justify-between mb-4 gap-2">
+                    <div className="flex gap-2 sm:gap-3 flex-1 min-w-0">
                       {review.photo ? (
-                        <img src={review.photo} alt={review.name} className="w-12 h-12 rounded-full object-cover" />
+                        <img src={review.photo} alt={review.name} className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover flex-shrink-0" />
                       ) : (
-                        <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-xl font-semibold text-primary">
+                        <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-full flex items-center justify-center text-lg sm:text-xl font-semibold text-primary flex-shrink-0">
                           {review.name[0]}
                         </div>
                       )}
-                      <div>
-                        <CardTitle className="text-lg">{review.name}</CardTitle>
-                        <p className="text-sm text-muted-foreground">{review.age}</p>
+                      <div className="min-w-0 flex-1">
+                        <CardTitle className="text-base sm:text-lg truncate">{review.name}</CardTitle>
+                        <p className="text-xs sm:text-sm text-muted-foreground truncate">{review.age}</p>
                       </div>
                     </div>
-                    <Badge variant="secondary" className="font-semibold">{review.income}</Badge>
+                    <Badge variant="secondary" className="font-semibold text-xs sm:text-sm whitespace-nowrap flex-shrink-0">{review.income}</Badge>
                   </div>
                   <div className="flex gap-1 mb-3">
                     {[...Array(review.rating)].map((_, i) => (
