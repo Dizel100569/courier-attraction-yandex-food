@@ -198,7 +198,7 @@ const Index = () => {
             backgroundImage: 'url(https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/bb7c8b93-585a-45c9-b226-6819051dc45e.jpg)'
           }}
         />
-        <div className="absolute inset-0 bg-white/85" />
+        <div className="absolute inset-0 bg-white/60" />
         <div className="relative container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-8 md:mb-12 text-slate-900">
