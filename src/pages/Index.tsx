@@ -8,7 +8,24 @@ const Index = () => {
     if (typeof window !== 'undefined' && (window as any).ym) {
       (window as any).ym(105927786, 'reachGoal', 'click_enroll');
     }
-    window.open("https://ihclick.ru/?p=272195&o=272212&idp=314945&erid=2VtzqvHfAQk", "_blank");
+    
+    let affiliateUrl = "https://ihclick.ru/?p=272195&o=272212&idp=314945&erid=2VtzqvHfAQk";
+    
+    if (typeof window !== 'undefined') {
+      const urlParams = new URLSearchParams(window.location.search);
+      const utmParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'yclid'];
+      
+      const utmString = utmParams
+        .filter(param => urlParams.has(param))
+        .map(param => `${param}=${urlParams.get(param)}`)
+        .join('&');
+      
+      if (utmString) {
+        affiliateUrl += '&' + utmString;
+      }
+    }
+    
+    window.open(affiliateUrl, "_blank");
   };
 
   return (
