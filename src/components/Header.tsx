@@ -1,11 +1,13 @@
 import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
+import { Link } from 'react-router-dom';
 
 export default function Header() {
   return (
     <header className="mb-16 border-b pb-6 sticky top-0 bg-muted/60 backdrop-blur-sm z-50">
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-6">
+          <Link to="/yandex-eda" className="flex items-center gap-3 hover:opacity-80 transition">
           <div className="w-14 h-14 bg-primary rounded-lg flex items-center justify-center">
             <Icon name="Bike" className="text-primary-foreground" size={32} />
           </div>
