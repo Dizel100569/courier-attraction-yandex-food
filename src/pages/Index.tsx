@@ -10,28 +10,37 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100">
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-20 md:py-32">
-        <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
-          <div className="inline-block px-4 py-2 bg-blue-100 rounded-full text-blue-700 text-sm font-medium mb-4">
-            Онлайн-обучение • Сертификат о прохождении
-          </div>
-          <h1 className="text-4xl md:text-6xl font-bold text-slate-900 leading-tight">
-            Archicad для дизайнеров и архитекторов
-          </h1>
-          <p className="text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto">
-            Освойте профессиональное 3D-моделирование и проектирование с нуля. Базовый курс для старта карьеры.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6">
-            <Button 
-              size="lg" 
-              className="text-lg px-8 py-6 bg-blue-600 hover:bg-blue-700"
-              onClick={handleCTAClick}
-            >
-              Записаться на курс
-              <Icon name="ArrowRight" className="ml-2" size={20} />
-            </Button>
-            <div className="text-sm text-slate-500">
-              Старт обучения сразу после оплаты
+      <section className="relative overflow-hidden mb-16">
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: 'url(https://cdn.poehali.dev/projects/35664f62-058c-4327-a458-46135950c5db/files/c53039b8-fab5-4038-b667-849cf83716b8.jpg)'
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/80 to-slate-900/70" />
+        <div className="relative container mx-auto px-4 py-20 md:py-32">
+          <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
+            <div className="inline-block px-4 py-2 bg-blue-500/90 rounded-full text-white text-sm font-medium mb-4">
+              Онлайн-обучение • Сертификат о прохождении
+            </div>
+            <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
+              Archicad для дизайнеров и архитекторов
+            </h1>
+            <p className="text-xl md:text-2xl text-blue-50 max-w-3xl mx-auto">
+              Освойте профессиональное 3D-моделирование и проектирование с нуля. Базовый курс для старта карьеры.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6">
+              <Button 
+                size="lg" 
+                className="text-lg px-8 py-6 bg-blue-600 hover:bg-blue-700"
+                onClick={handleCTAClick}
+              >
+                Записаться на курс
+                <Icon name="ArrowRight" className="ml-2" size={20} />
+              </Button>
+              <div className="text-sm text-blue-100">
+                Старт обучения сразу после оплаты
+              </div>
             </div>
           </div>
         </div>
@@ -189,6 +198,50 @@ const Index = () => {
                   {index + 1}
                 </div>
                 <p className="text-slate-700 pt-1">{item}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="container mx-auto px-4 py-16 bg-white/50">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-900">
+            Отзывы учеников
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                name: "Анна Смирнова",
+                role: "Дизайнер интерьеров",
+                text: "Курс превзошёл все ожидания! За месяц освоила Archicad и уже работаю над реальными проектами. Ирина объясняет сложные вещи простым языком.",
+                rating: 5
+              },
+              {
+                name: "Дмитрий Волков",
+                role: "Студент архитектурного факультета",
+                text: "Отличная структура курса и практические задания. Теперь могу создавать профессиональные чертежи и 3D-модели для учёбы и фриланса.",
+                rating: 5
+              },
+              {
+                name: "Екатерина Новикова",
+                role: "Начинающий архитектор",
+                text: "Очень довольна! Получила все необходимые навыки для работы в архитектурном бюро. Поддержка куратора помогла разобраться во всех нюансах.",
+                rating: 5
+              }
+            ].map((review, index) => (
+              <Card key={index} className="p-6 hover:shadow-lg transition-shadow animate-fade-in-up" style={{ animationDelay: `${index * 0.1}s` }}>
+                <div className="flex gap-1 mb-4">
+                  {[...Array(review.rating)].map((_, i) => (
+                    <Icon key={i} name="Star" className="text-yellow-500 fill-yellow-500" size={20} />
+                  ))}
+                </div>
+                <p className="text-slate-700 mb-4 leading-relaxed">"{review.text}"</p>
+                <div className="border-t pt-4">
+                  <p className="font-semibold text-slate-900">{review.name}</p>
+                  <p className="text-sm text-slate-500">{review.role}</p>
+                </div>
               </Card>
             ))}
           </div>
