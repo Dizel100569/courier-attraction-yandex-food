@@ -51,7 +51,7 @@ export default function ApplicationForm() {
   };
 
   return (
-    <section id="application-form" className="mb-16 md:mb-24">
+    <section id="application-form" className="mb-16 md:mb-24 bg-stone-200">
       <Card className="max-w-2xl mx-auto border shadow-lg">
         <CardHeader className="text-center bg-muted/30">
           <CardTitle className="text-2xl md:text-3xl font-bold mb-2">Форма заявки на трудоустройство</CardTitle>
