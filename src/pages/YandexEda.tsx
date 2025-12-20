@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Icon from "@/components/ui/icon";
+import { Link } from "react-router-dom";
 
 const YandexEda = () => {
   return (
@@ -98,6 +99,33 @@ const YandexEda = () => {
             Подать заявку сейчас
             <Icon name="ArrowRight" className="ml-2" size={20} />
           </Button>
+        </div>
+      </section>
+
+      {/* Other Projects Section */}
+      <section className="container mx-auto px-4 py-16 bg-gradient-to-br from-slate-50 to-slate-100">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-slate-900">
+            Другие проекты
+          </h2>
+          <Link to="/archicad" className="block group">
+            <Card className="p-6 hover:shadow-2xl transition-all duration-300 group-hover:scale-[1.02] bg-gradient-to-br from-blue-50 to-indigo-50">
+              <div className="flex items-center gap-6">
+                <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                  <Icon name="Building2" className="text-white" size={40} />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold mb-2 text-slate-900 group-hover:text-blue-700 transition-colors">
+                    ARCHICAD
+                  </h3>
+                  <p className="text-slate-600 text-lg">
+                    Профессиональное BIM-решение для архитекторов и проектировщиков
+                  </p>
+                </div>
+                <Icon name="ArrowRight" className="text-blue-600 group-hover:translate-x-2 transition-transform" size={32} />
+              </div>
+            </Card>
+          </Link>
         </div>
       </section>
 
