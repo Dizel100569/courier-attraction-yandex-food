@@ -40,7 +40,7 @@ export const HeroSection = () => {
           <div className="flex flex-col sm:flex-row flex-wrap gap-3 md:gap-4">
             <Button 
               size="lg" 
-              className="w-full sm:w-auto px-6 md:px-8 py-5 md:py-6 bg-white hover:bg-[#FFD700] text-slate-800 transition-colors"
+              className="w-full sm:w-auto px-6 md:px-8 py-5 md:py-6 bg-white hover:bg-[#FFD700] text-slate-900 hover:text-slate-900 transition-all font-semibold"
               asChild
             >
               <a href="#application-form" onClick={() => {
@@ -54,7 +54,7 @@ export const HeroSection = () => {
             </Button>
             <Button 
               size="lg" 
-              className="w-full sm:w-auto px-6 md:px-8 py-5 md:py-6 bg-white hover:bg-[#FFD700] text-slate-800 transition-colors"
+              className="w-full sm:w-auto px-6 md:px-8 py-5 md:py-6 bg-white hover:bg-[#FFD700] text-slate-900 hover:text-slate-900 transition-all font-semibold"
               onClick={() => {
                 document.getElementById('benefits')?.scrollIntoView({ 
                   behavior: 'smooth',
