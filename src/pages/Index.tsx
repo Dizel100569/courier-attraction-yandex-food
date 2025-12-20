@@ -7,6 +7,7 @@ import Header from '@/components/Header';
 import IncomeCalculator from '@/components/IncomeCalculator';
 import ApplicationForm from '@/components/ApplicationForm';
 import Footer from '@/components/Footer';
+import { Link } from 'react-router-dom';
 
 export default function Index() {
   return (
@@ -248,6 +249,33 @@ export default function Index() {
               </AccordionItem>
             ))}
           </Accordion>
+        </section>
+
+        <section className="mb-16 md:mb-24 bg-gradient-to-br from-blue-50 to-indigo-50 py-12 -mx-4 px-4 rounded-2xl">
+          <div className="max-w-3xl mx-auto text-center mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold mb-3 text-foreground">Другие проекты</h2>
+            <p className="text-base text-muted-foreground">Узнайте больше о наших решениях</p>
+          </div>
+          <div className="max-w-2xl mx-auto">
+            <Link to="/archicad" className="block group">
+              <Card className="p-8 hover:shadow-2xl transition-all duration-300 group-hover:scale-[1.02] bg-white">
+                <div className="flex items-center gap-6">
+                  <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                    <Icon name="Building2" className="text-white" size={40} />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-bold mb-2 text-slate-900 group-hover:text-blue-700 transition-colors">
+                      ARCHICAD
+                    </h3>
+                    <p className="text-slate-600 text-lg">
+                      Профессиональное BIM-решение для архитекторов и проектировщиков
+                    </p>
+                  </div>
+                  <Icon name="ArrowRight" className="text-blue-600 group-hover:translate-x-2 transition-transform" size={32} />
+                </div>
+              </Card>
+            </Link>
+          </div>
         </section>
 
         <Footer />
