@@ -29,7 +29,7 @@ export default function IncomeCalculator() {
   };
 
   return (
-    <section id="calculator" className="mb-16 md:mb-24 bg-amber-100">
+    <section id="calculator" className="mb-16 md:mb-24">
       <Card className="border shadow-lg overflow-hidden max-w-4xl mx-auto">
         <div className="bg-muted/50 p-4 md:p-8">
           <CardHeader className="text-center pb-4 md:pb-6">
@@ -105,7 +105,7 @@ export default function IncomeCalculator() {
             <div className="space-y-3 md:space-y-4">
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
                 <span className="text-sm md:text-base font-medium">Количество рабочих часов в день:</span>
-                <Badge variant="secondary" className="text-base md:text-lg px-4 md:px-6 py-1.5 md:py-2 bg-[#FFD700] text-slate-800 hover:bg-[#FFD700] rounded-full">{hoursPerDay[0]} ч</Badge>
+                <Badge variant="secondary" className="text-base md:text-lg px-3 md:px-4 py-1.5 md:py-2">{hoursPerDay[0]} ч</Badge>
               </div>
               <Slider
                 value={hoursPerDay}
