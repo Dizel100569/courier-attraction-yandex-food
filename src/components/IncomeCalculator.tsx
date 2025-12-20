@@ -128,15 +128,15 @@ export default function IncomeCalculator() {
               </div>
             </div>
             <div className="grid grid-cols-3 gap-2 md:gap-4 text-center">
-              <div className="bg-card rounded-xl md:rounded-2xl p-2 md:p-4">
+              <div className="rounded-xl md:rounded-2xl p-2 md:p-4 bg-amber-100">
                 <p className="text-xs md:text-sm text-muted-foreground mb-1">Заказов в час</p>
                 <p className="text-xl md:text-3xl font-bold">~{courierType === 'walking' ? '2' : courierType === 'bike' ? '3' : '4'}</p>
               </div>
-              <div className="bg-card rounded-xl md:rounded-2xl p-2 md:p-4">
+              <div className="rounded-xl md:rounded-2xl p-2 md:p-4 bg-amber-100">
                 <p className="text-xs md:text-sm text-muted-foreground mb-1">За заказ</p>
                 <p className="text-xl md:text-3xl font-bold">~{courierType === 'walking' ? '400' : courierType === 'bike' ? '550' : '700'}₽</p>
               </div>
-              <div className="bg-card rounded-xl md:rounded-2xl p-2 md:p-4">
+              <div className="rounded-xl md:rounded-2xl p-2 md:p-4 bg-amber-100">
                 <p className="text-xs md:text-sm text-muted-foreground mb-1">Рабочих дней</p>
                 <p className="text-xl md:text-3xl font-bold">22</p>
               </div>
