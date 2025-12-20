@@ -1,21 +1,21 @@
-import HeroSection from "@/components/archicad/HeroSection";
-import CourseInfoSection from "@/components/archicad/CourseInfoSection";
-import ProgramSection from "@/components/archicad/ProgramSection";
-import PricingCTASection from "@/components/archicad/PricingCTASection";
+import Header from '@/components/Header';
+import { HeroSection } from '@/components/yandex-eda/HeroSection';
+import { BenefitsAndSteps } from '@/components/yandex-eda/BenefitsAndSteps';
+import { CalculatorAndReviews } from '@/components/yandex-eda/CalculatorAndReviews';
+import { FAQAndForm } from '@/components/yandex-eda/FAQAndForm';
+import Footer from '@/components/Footer';
 
-const Index = () => {
-  const handleCTAClick = () => {
-    window.open("https://ihclick.ru/?p=272195&o=272212&idp=314945&erid=2VtzqvHfAQk", "_blank");
-  };
-
+export default function Index() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100">
-      <HeroSection onCTAClick={handleCTAClick} />
-      <CourseInfoSection />
-      <ProgramSection />
-      <PricingCTASection onCTAClick={handleCTAClick} />
+    <div className="min-h-screen bg-background">
+      <div className="w-full px-4 py-6">
+        <Header />
+        <HeroSection />
+        <BenefitsAndSteps />
+        <CalculatorAndReviews />
+        <FAQAndForm />
+        <Footer />
+      </div>
     </div>
   );
-};
-
-export default Index;
+}
