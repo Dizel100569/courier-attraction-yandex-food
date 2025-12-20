@@ -30,8 +30,8 @@ export const BenefitsAndSteps = () => {
             ].map((benefit, idx) => (
               <Card key={idx} className="hover:shadow-lg transition-shadow">
                 <CardHeader>
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                    <Icon name={benefit.icon as any} size={24} className="text-primary" />
+                  <div className={`${benefit.icon === 'Clock' ? 'w-16 h-12 rounded-full bg-[#FFD700]' : 'w-12 h-12 rounded-lg bg-primary/10'} flex items-center justify-center mb-4`}>
+                    <Icon name={benefit.icon as any} size={24} className={benefit.icon === 'Clock' ? 'text-slate-800' : 'text-primary'} />
                   </div>
                   <CardTitle className="text-xl mb-2">{benefit.title}</CardTitle>
                   <CardDescription className="text-base leading-relaxed">{benefit.desc}</CardDescription>
