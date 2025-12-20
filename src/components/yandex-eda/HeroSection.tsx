@@ -24,15 +24,15 @@ export const HeroSection = () => {
             Официальное трудоустройство с полным социальным пакетом. Стабильный доход от 120 000₽ до 275 000₽ в месяц, свободный график работы и выплаты два раза в неделю.
           </p>
           <div className="grid grid-cols-3 gap-1.5 sm:gap-2 md:gap-4 py-4">
-            <div className="text-center p-1.5 sm:p-2 md:p-4 bg-background/95 backdrop-blur-md rounded-lg shadow-lg">
+            <div className="text-center p-1.5 sm:p-2 md:p-4 backdrop-blur-md rounded-lg shadow-lg bg-yellow-300">
               <div className="text-base sm:text-xl md:text-3xl font-bold text-foreground leading-tight">275К₽</div>
               <div className="text-[10px] sm:text-xs md:text-sm text-foreground mt-0.5 sm:mt-1 leading-tight">Макс. доход</div>
             </div>
-            <div className="text-center p-1.5 sm:p-2 md:p-4 bg-background/95 backdrop-blur-md rounded-lg shadow-lg">
+            <div className="text-center p-1.5 sm:p-2 md:p-4 backdrop-blur-md rounded-lg shadow-lg bg-yellow-300">
               <div className="text-base sm:text-xl md:text-3xl font-bold text-foreground leading-tight">2х</div>
               <div className="text-[10px] sm:text-xs md:text-sm text-foreground mt-0.5 sm:mt-1 leading-tight">Выплаты</div>
             </div>
-            <div className="text-center p-1.5 sm:p-2 md:p-4 bg-background/95 backdrop-blur-md rounded-lg shadow-lg">
+            <div className="text-center p-1.5 sm:p-2 md:p-4 backdrop-blur-md rounded-lg shadow-lg bg-yellow-300">
               <div className="text-base sm:text-xl md:text-3xl font-bold text-foreground leading-tight">24/7</div>
               <div className="text-[10px] sm:text-xs md:text-sm text-foreground mt-0.5 sm:mt-1 leading-tight">Поддержка</div>
             </div>
