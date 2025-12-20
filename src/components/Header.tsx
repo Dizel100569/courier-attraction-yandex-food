@@ -1,6 +1,5 @@
 import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
-import { Link } from 'react-router-dom';
 
 export default function Header() {
   return (
@@ -20,10 +19,6 @@ export default function Header() {
           <a href="#calculator" className="text-sm font-medium hover:text-primary transition-colors">Калькулятор</a>
           <a href="#faq" className="text-sm font-medium hover:text-primary transition-colors">Вопросы</a>
           <a href="#reviews" className="text-sm font-medium hover:text-primary transition-colors">Отзывы</a>
-          <Link to="/archicad" className="text-sm font-medium hover:text-primary transition-colors flex items-center gap-1">
-            <Icon name="Building2" size={16} />
-            Архикад
-          </Link>
         </nav>
         <Button size="lg" className="hidden md:flex items-center gap-2" asChild>
           <a href="tel:88006000111" onClick={() => {
