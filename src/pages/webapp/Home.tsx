@@ -33,22 +33,23 @@ const Home = () => {
           <p className="text-xl text-slate-400">Выберите проект для просмотра</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="space-y-6">
           {projects.map((project) => (
             <Card 
               key={project.id}
               className="p-8 bg-white/5 backdrop-blur border-white/10 hover:bg-white/10 transition cursor-pointer group"
               onClick={() => navigate(project.path)}
             >
-              <div className={`w-16 h-16 ${project.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition`}>
-                <Icon name={project.icon} className="text-white" size={32} />
+              <div className="flex items-center gap-6">
+                <div className={`w-20 h-20 ${project.color} rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition`}>
+                  <Icon name={project.icon} className="text-white" size={36} />
+                </div>
+                <div className="flex-1">
+                  <h2 className="text-2xl font-bold text-white mb-2">{project.title}</h2>
+                  <p className="text-slate-400 text-lg">{project.description}</p>
+                </div>
+                <Icon name="ArrowRight" className="text-slate-400 group-hover:translate-x-2 group-hover:text-white transition-all" size={32} />
               </div>
-              <h2 className="text-2xl font-bold text-white mb-2">{project.title}</h2>
-              <p className="text-slate-400 mb-6">{project.description}</p>
-              <Button className="w-full" variant="outline">
-                Открыть проект
-                <Icon name="ArrowRight" className="ml-2" size={16} />
-              </Button>
             </Card>
           ))}
         </div>
