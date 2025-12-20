@@ -45,7 +45,7 @@ export const HeroSection = () => {
                   (window as any).ym(105912288, 'reachGoal', 'click_apply_button');
                 }
               }}
-              className="inline-flex items-center justify-center rounded-md text-base font-semibold w-full sm:w-auto px-6 md:px-8 py-5 md:py-6 bg-white hover:bg-[#FFD700] text-slate-900 transition-colors"
+              className="inline-flex items-center justify-center rounded-md text-base font-semibold w-full sm:w-auto px-6 md:px-8 py-5 md:py-6 bg-[#FFFFFF] hover:bg-[#FFD700] text-slate-900 transition-colors"
             >
               Подать заявку
               <Icon name="ArrowRight" className="ml-2" size={18} />
@@ -57,7 +57,7 @@ export const HeroSection = () => {
                   block: 'start'
                 });
               }}
-              className="inline-flex items-center justify-center rounded-md text-base font-semibold w-full sm:w-auto px-6 md:px-8 py-5 md:py-6 bg-white hover:bg-[#FFD700] text-slate-900 transition-colors"
+              className="inline-flex items-center justify-center rounded-md text-base font-semibold w-full sm:w-auto px-6 md:px-8 py-5 md:py-6 bg-[#FFFFFF] hover:bg-[#FFD700] text-slate-900 transition-colors"
             >
               Подробнее об условиях
             </button>
