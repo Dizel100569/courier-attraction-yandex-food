@@ -102,10 +102,10 @@ export default function IncomeCalculator() {
                 </div>
               </div>
             </div>
-            <div className="bg-[#FFD700] rounded-xl p-4 md:p-6 space-y-3 md:space-y-4">
+            <div className="space-y-3 md:space-y-4">
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
-                <span className="text-sm md:text-base font-medium text-slate-900">Количество рабочих часов в день:</span>
-                <Badge variant="secondary" className="text-base md:text-lg px-3 md:px-4 py-1.5 md:py-2 bg-slate-900 text-white">{hoursPerDay[0]} ч</Badge>
+                <span className="text-sm md:text-base font-medium">Количество рабочих часов в день:</span>
+                <Badge variant="secondary" className="text-base md:text-lg px-6 md:px-8 py-2 md:py-3 bg-[#FFD700] text-slate-900 hover:bg-[#FFD700] font-bold">{hoursPerDay[0]} ч</Badge>
               </div>
               <Slider
                 value={hoursPerDay}
@@ -115,7 +115,7 @@ export default function IncomeCalculator() {
                 step={1}
                 className="py-4"
               />
-              <div className="flex justify-between text-sm text-slate-700 font-medium">
+              <div className="flex justify-between text-sm text-muted-foreground">
                 <span>2 часа</span>
                 <span>12 часов</span>
               </div>
