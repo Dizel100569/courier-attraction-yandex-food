@@ -29,7 +29,7 @@ export default function IncomeCalculator() {
   };
 
   return (
-    <section id="calculator" className="mb-16 md:mb-24 bg-amber-100">
+    <section id="calculator" className="mb-16 md:mb-24">
       <Card className="border shadow-lg overflow-hidden max-w-4xl mx-auto">
         <div className="bg-muted/50 p-4 md:p-8">
           <CardHeader className="text-center pb-4 md:pb-6">
@@ -105,7 +105,7 @@ export default function IncomeCalculator() {
             <div className="space-y-3 md:space-y-4">
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
                 <span className="text-sm md:text-base font-medium">Количество рабочих часов в день:</span>
-                <Badge variant="secondary" className="text-base md:text-lg px-6 md:px-8 py-2 md:py-3 bg-[#FFD700] text-slate-900 hover:bg-[#FFD700] font-bold">{hoursPerDay[0]} ч</Badge>
+                <Badge variant="secondary" className="text-base md:text-lg px-3 md:px-4 py-1.5 md:py-2">{hoursPerDay[0]} ч</Badge>
               </div>
               <Slider
                 value={hoursPerDay}
@@ -128,15 +128,15 @@ export default function IncomeCalculator() {
               </div>
             </div>
             <div className="grid grid-cols-3 gap-2 md:gap-4 text-center">
-              <div className="rounded-xl md:rounded-2xl p-2 md:p-4 bg-amber-100">
+              <div className="bg-card rounded-xl md:rounded-2xl p-2 md:p-4">
                 <p className="text-xs md:text-sm text-muted-foreground mb-1">Заказов в час</p>
                 <p className="text-xl md:text-3xl font-bold">~{courierType === 'walking' ? '2' : courierType === 'bike' ? '3' : '4'}</p>
               </div>
-              <div className="rounded-xl md:rounded-2xl p-2 md:p-4 bg-amber-100">
+              <div className="bg-card rounded-xl md:rounded-2xl p-2 md:p-4">
                 <p className="text-xs md:text-sm text-muted-foreground mb-1">За заказ</p>
                 <p className="text-xl md:text-3xl font-bold">~{courierType === 'walking' ? '400' : courierType === 'bike' ? '550' : '700'}₽</p>
               </div>
-              <div className="rounded-xl md:rounded-2xl p-2 md:p-4 bg-amber-100">
+              <div className="bg-card rounded-xl md:rounded-2xl p-2 md:p-4">
                 <p className="text-xs md:text-sm text-muted-foreground mb-1">Рабочих дней</p>
                 <p className="text-xl md:text-3xl font-bold">22</p>
               </div>
