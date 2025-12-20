@@ -29,7 +29,7 @@ export default function IncomeCalculator() {
   };
 
   return (
-    <section id="calculator" className="mb-16 md:mb-24">
+    <section id="calculator" className="mb-16 md:mb-24 bg-amber-100">
       <Card className="border shadow-lg overflow-hidden max-w-4xl mx-auto">
         <div className="bg-muted/50 p-4 md:p-8">
           <CardHeader className="text-center pb-4 md:pb-6">
