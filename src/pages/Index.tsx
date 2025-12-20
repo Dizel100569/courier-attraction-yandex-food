@@ -48,33 +48,29 @@ export default function Index() {
                 </div>
               </div>
               <div className="flex flex-col sm:flex-row flex-wrap gap-3 md:gap-4">
-                <Button 
-                  size="lg" 
-                  className="w-full sm:w-auto px-6 md:px-8 py-5 md:py-6 text-foreground"
-                  asChild
-                >
-                  <a href="#application-form" onClick={() => {
+                <a 
+                  href="#application-form" 
+                  onClick={() => {
                     if (typeof window !== 'undefined' && (window as any).ym) {
                       (window as any).ym(105912288, 'reachGoal', 'click_apply_button');
                     }
-                  }}>
-                    Подать заявку
-                    <Icon name="ArrowRight" className="ml-2" size={18} />
-                  </a>
-                </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  className="w-full sm:w-auto px-6 md:px-8 py-5 md:py-6"
+                  }}
+                  className="inline-flex items-center justify-center rounded-md text-base font-semibold w-full sm:w-auto px-6 md:px-8 py-5 md:py-6 bg-[#FFFFFF] hover:bg-[#FFD700] text-slate-900 transition-colors"
+                >
+                  Подать заявку
+                  <Icon name="ArrowRight" className="ml-2" size={18} />
+                </a>
+                <button 
                   onClick={() => {
                     document.getElementById('benefits')?.scrollIntoView({ 
                       behavior: 'smooth',
                       block: 'start'
                     });
                   }}
+                  className="inline-flex items-center justify-center rounded-md text-base font-semibold w-full sm:w-auto px-6 md:px-8 py-5 md:py-6 bg-[#FFFFFF] hover:bg-[#FFD700] text-slate-900 transition-colors"
                 >
                   Подробнее об условиях
-                </Button>
+                </button>
               </div>
             </div>
             <div className="relative lg:block hidden">
