@@ -2,7 +2,7 @@ import Icon from '@/components/ui/icon';
 
 export default function Footer() {
   return (
-    <footer className="text-center py-12 border-t bg-muted/80 mt-16">
+    <footer className="text-center py-12 border-t mt-16 bg-slate-200">
       <div className="w-full space-y-6">
         <div className="flex items-center justify-center gap-3">
           <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
