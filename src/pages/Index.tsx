@@ -120,7 +120,7 @@ export default function Index() {
           </div>
         </section>
         
-        <section className="mb-16 md:mb-24">
+        <section className="md:mb-24 bg-slate-200 mx-0 my-12 py-[60px]">
           <div className="text-center mb-8 md:mb-12">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4 text-foreground">Как начать работать</h2>
             <p className="text-base md:text-lg text-muted-foreground">Простой процесс трудоустройства за 3 шага</p>
